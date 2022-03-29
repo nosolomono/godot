@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://WinScene.gd" type="Script" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/10_ganas.png-1d6475231ac719fa2ab930a3ddde99a9.stex"
+
+[node name="WinScene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="WinScreenBkg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = SubResource( 1 )
+
+[node name="ButtonReplay" type="Button" parent="."]
+margin_left = 1159.0
+margin_top = 732.0
+margin_right = 1664.0
+margin_bottom = 820.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Volver a jugar"
+
+[node name="ButtonReward" type="Button" parent="."]
+margin_left = 1160.0
+margin_top = 616.0
+margin_right = 1664.0
+margin_bottom = 704.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Recompensa"
+
+[node name="ButtonCredits" type="Button" parent="."]
+margin_left = 1160.0
+margin_top = 849.0
+margin_right = 1664.0
+margin_bottom = 937.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Finalizar juego"
+
+[connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
+[connection signal="pressed" from="ButtonReward" to="." method="_on_ButtonReward_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_ButtonCredits_pressed"]

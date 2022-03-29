@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://Lose1Scene.gd" type="Script" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/06_pierdes1a.png-914240fc1b42b2cb1427db3bad309c94.stex"
+
+[node name="Lose1Scene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Lose1SceneBkg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = SubResource( 1 )
+
+[node name="ButtonReplay" type="Button" parent="."]
+margin_left = 1159.0
+margin_top = 732.0
+margin_right = 1664.0
+margin_bottom = 820.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Volver a jugar"
+
+[node name="ButtonCredits" type="Button" parent="."]
+margin_left = 1160.0
+margin_top = 849.0
+margin_right = 1664.0
+margin_bottom = 937.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Finalizar juego"
+
+[connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
+[connection signal="pressed" from="ButtonCredits" to="." method="_on_ButtonCredits_pressed"]

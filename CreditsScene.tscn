@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://CreditsScene.gd" type="Script" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/05_ready.png-441b37370a413677ac2dcbb9c51e1da9.stex"
+
+[node name="CreditsScene" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="CreditsSceneBkg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = SubResource( 1 )
+
+[node name="ButtonReplay" type="Button" parent="."]
+margin_left = 712.0
+margin_top = 888.0
+margin_right = 1217.0
+margin_bottom = 976.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Volver a jugar"
+
+[connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
