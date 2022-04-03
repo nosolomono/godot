@@ -1,0 +1,297 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=1]
+[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
+[ext_resource path="res://GameScene.gd" type="Script" id=3]
+[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/menu_button.png" type="Texture" id=5]
+[ext_resource path="res://MenuButton.gd" type="Script" id=6]
+[ext_resource path="res://actors/gata_animation/gata_idle_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/camita_audrey.png" type="Texture" id=8]
+[ext_resource path="res://actors/gata_animation/gata_idle_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/pointer_hand.png" type="Texture" id=10]
+[ext_resource path="res://CursorSprite.gd" type="Script" id=11]
+[ext_resource path="res://assets/pointer_arrow.png" type="Texture" id=12]
+[ext_resource path="res://ControlOutside.gd" type="Script" id=13]
+[ext_resource path="res://actors/gata_animation/gata_tail_1.png" type="Texture" id=14]
+[ext_resource path="res://actors/gata_animation/gata_tail_2.png" type="Texture" id=15]
+[ext_resource path="res://actors/gata_animation/gata_awake_1.png" type="Texture" id=16]
+[ext_resource path="res://actors/gata_animation/gata_ear_1.png" type="Texture" id=17]
+[ext_resource path="res://actors/gata_animation/gata_awake_2.png" type="Texture" id=18]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/05_juego.png-bc551e3fecc59686574febeb2647d340.stex"
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "gata_idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "gata_awake",
+"speed": 0.2
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "gata_ear",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "gata_tail",
+"speed": 3.0
+} ]
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "gata_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "gata_awake"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "gata_awake" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.2, 2.5, 3.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "gata_ear"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "gata_ear" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "gata_idle"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "gata_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "gata_tail"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "gata_tail" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "hand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "pointer",
+"speed": 5.0
+} ]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ControlOutside" type="Control" parent="CanvasLayer"]
+visible = false
+margin_right = 1910.0
+margin_bottom = 1070.0
+script = ExtResource( 13 )
+
+[node name="GameScreenBkg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = SubResource( 1 )
+
+[node name="ButtonWin" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 610.0
+margin_right = 744.0
+margin_bottom = 698.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "Ganas"
+
+[node name="ButtonLose1" type="Button" parent="."]
+margin_left = 768.0
+margin_top = 610.0
+margin_right = 1064.0
+margin_bottom = 698.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "Pierdes1"
+
+[node name="ButtonLose2" type="Button" parent="."]
+margin_left = 1088.0
+margin_top = 610.0
+margin_right = 1384.0
+margin_bottom = 698.0
+rect_pivot_offset = Vector2( 267, 79 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 1 )
+text = "Pierdes2"
+
+[node name="MenuButton" type="Sprite" parent="."]
+position = Vector2( 123, 98 )
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="CamitaAudrey" type="Sprite" parent="."]
+position = Vector2( 1013, 879 )
+texture = ExtResource( 8 )
+
+[node name="AreaAudrey" type="Area2D" parent="."]
+position = Vector2( 940, 808 )
+collision_layer = 16
+
+[node name="SpriteAudrey" type="AnimatedSprite" parent="AreaAudrey"]
+position = Vector2( 85, 12 )
+frames = SubResource( 6 )
+animation = "gata_idle"
+
+[node name="PlayerAudrey" type="AnimationPlayer" parent="AreaAudrey/SpriteAudrey"]
+anims/RESET = SubResource( 8 )
+anims/gata_awake = SubResource( 9 )
+anims/gata_ear = SubResource( 11 )
+anims/gata_idle = SubResource( 10 )
+anims/gata_tail = SubResource( 12 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaAudrey"]
+position = Vector2( -14.3395, 0.531259 )
+scale = Vector2( 2.21946, 1.43555 )
+polygon = PoolVector2Array( 52.8685, -29.6273, 46.1101, -26.1443, 33.4944, -21.2681, 16.8237, -20.5715, 1.50464, -17.0885, -15.6166, -2.4599, -18.32, 6.59589, -12.9133, 38.6395, 3.75745, 54.6612, 23.5821, 63.0204, 40.7033, 63.717, 49.264, 62.3238, 78.0998, 61.6272, 92.5177, 45.6054, 94.32, 13.5619, 79.4515, -24.0544, 61.4291, -31.0204 )
+
+[node name="CursorSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1249, 957 )
+frames = SubResource( 7 )
+animation = "pointer"
+offset = Vector2( 15, 23 )
+script = ExtResource( 11 )
+
+[connection signal="gui_input" from="CanvasLayer/ControlOutside" to="." method="_on_ControlOutside_gui_input"]
+[connection signal="pressed" from="ButtonWin" to="." method="_on_ButtonWin_pressed"]
+[connection signal="pressed" from="ButtonLose1" to="." method="_on_ButtonLose1_pressed"]
+[connection signal="pressed" from="ButtonLose2" to="." method="_on_ButtonLose2_pressed"]
+[connection signal="input_event" from="AreaAudrey" to="." method="_on_AreaAudrey_input_event"]
+[connection signal="mouse_entered" from="AreaAudrey" to="." method="_on_AreaAudrey_mouse_entered"]
+[connection signal="mouse_exited" from="AreaAudrey" to="." method="_on_AreaAudrey_mouse_exited"]
+[connection signal="animation_finished" from="AreaAudrey/SpriteAudrey/PlayerAudrey" to="." method="_on_PlayerAudrey_animation_finished"]

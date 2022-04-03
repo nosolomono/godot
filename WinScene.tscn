@@ -17,10 +17,10 @@ position = Vector2( 960, 540 )
 texture = SubResource( 1 )
 
 [node name="ButtonReplay" type="Button" parent="."]
-margin_left = 1159.0
-margin_top = 732.0
-margin_right = 1664.0
-margin_bottom = 820.0
+margin_left = 1154.0
+margin_top = 631.0
+margin_right = 1659.0
+margin_bottom = 759.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
@@ -29,10 +29,11 @@ custom_styles/normal = ExtResource( 3 )
 text = "Volver a jugar"
 
 [node name="ButtonReward" type="Button" parent="."]
+visible = false
 margin_left = 1160.0
-margin_top = 616.0
+margin_top = 1166.0
 margin_right = 1664.0
-margin_bottom = 704.0
+margin_bottom = 1254.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
@@ -41,16 +42,16 @@ custom_styles/normal = ExtResource( 3 )
 text = "Recompensa"
 
 [node name="ButtonCredits" type="Button" parent="."]
-margin_left = 1160.0
-margin_top = 849.0
-margin_right = 1664.0
-margin_bottom = 937.0
+margin_left = 1155.0
+margin_top = 788.0
+margin_right = 1659.0
+margin_bottom = 905.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
-text = "Finalizar juego"
+text = "Ver creditos"
 
 [connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
 [connection signal="pressed" from="ButtonReward" to="." method="_on_ButtonReward_pressed"]

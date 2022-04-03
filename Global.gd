@@ -13,6 +13,21 @@ the last child of root is always the loaded scene.
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+	# START Following script customizes cursor
+	var cursor_arrow = load("res://assets/pointer_arrow.png")
+	var cursor_hand = load("res://assets/pointer_hand.png")
+
+	# Changes only the arrow shape of the cursor
+	# This is similar to changing it in the project settings
+	Input.set_custom_mouse_cursor(cursor_arrow)
+	# Input.set_custom_mouse_cursor(cursor_arrow, Input.CURSOR_ARROW, Vector2())
+	
+
+	# Changes a specific shape of the cursor (here the IBeam shape)
+	Input.set_custom_mouse_cursor(cursor_hand, Input.CURSOR_POINTING_HAND)
+	# Input.set_custom_mouse_cursor(cursor_hand, Input.CURSOR_POINTING_HAND, Vector2())
+	# END Following script customizes cursor
 
 
 """
@@ -60,3 +75,6 @@ func _deferred_goto_scene(path):
 	"""
 	Finally, we need to fill the empty callback functions in the scenes
 	"""
+
+
+

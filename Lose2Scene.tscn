@@ -18,9 +18,9 @@ texture = SubResource( 1 )
 
 [node name="ButtonReplay" type="Button" parent="."]
 margin_left = 463.0
-margin_top = 898.0
+margin_top = 914.0
 margin_right = 968.0
-margin_bottom = 986.0
+margin_bottom = 1002.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
@@ -30,9 +30,9 @@ text = "Volver a jugar"
 
 [node name="ButtonCredits" type="Button" parent="."]
 margin_left = 1028.0
-margin_top = 894.0
+margin_top = 914.0
 margin_right = 1532.0
-margin_bottom = 982.0
+margin_bottom = 1002.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )

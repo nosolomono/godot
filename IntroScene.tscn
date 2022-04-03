@@ -1,0 +1,167 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://IntroScene.gd" type="Script" id=1]
+[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_5.png" type="Texture" id=5]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_6.png" type="Texture" id=7]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_7.png" type="Texture" id=8]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_1.png" type="Texture" id=9]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_2.png" type="Texture" id=10]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_4.png" type="Texture" id=11]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_8.png" type="Texture" id=12]
+[ext_resource path="res://assets/dora_intro_animation/intro_ani_9.png" type="Texture" id=13]
+[ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://actors/gata_animation/gata_idle_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/camita_audrey.png" type="Texture" id=17]
+[ext_resource path="res://actors/gata_animation/gata_idle_1.png" type="Texture" id=18]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/04_intro.png-ff2ed0e3b85d033ab94b6f00f4daf26c.stex"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "intro_ani",
+"speed": 2.5
+} ]
+
+[sub_resource type="DynamicFont" id=7]
+size = 44
+outline_size = 7
+outline_color = Color( 0.203922, 0.196078, 0.196078, 1 )
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroText:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("IntroText:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "intro_text_ani"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("IntroText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "IntroTextAniEnded"
+} ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "gata_idle",
+"speed": 1.0
+} ]
+
+[node name="IntroScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="IntroScreenBkg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 558.0
+margin_top = 1136.0
+margin_right = 1362.0
+margin_bottom = 1352.0
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Empezar juego"
+
+[node name="IntroAniSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 461, 545 )
+frames = SubResource( 2 )
+animation = "intro_ani"
+
+[node name="IntroText" type="RichTextLabel" parent="."]
+margin_left = 442.0
+margin_top = 501.0
+margin_right = 1491.0
+margin_bottom = 711.0
+rect_pivot_offset = Vector2( 1525, -335 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center]¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa![/center]"
+visible_characters = 0
+percent_visible = 0.0
+text = "¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa!"
+override_selected_font_color = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/intro_text_ani = SubResource( 5 )
+
+[node name="CamitaAudrey" type="Sprite" parent="."]
+position = Vector2( 1013, 879 )
+texture = ExtResource( 17 )
+
+[node name="AudreySprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1025, 820 )
+frames = SubResource( 6 )
+animation = "gata_idle"
+frame = 1
+playing = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="animation_finished" from="IntroAniSprite" to="." method="_on_IntroAniSprite_animation_finished"]

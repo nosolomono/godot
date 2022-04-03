@@ -1,31 +1,56 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
 [ext_resource path="res://CreditsScene.gd" type="Script" id=4]
+[ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
-load_path = "res://.import/05_ready.png-441b37370a413677ac2dcbb9c51e1da9.stex"
+
+[sub_resource type="DynamicFont" id=3]
+size = 78
+outline_size = 7
+outline_color = Color( 0.359375, 0.318665, 0.318665, 1 )
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="CreditsScene" type="Node2D"]
 script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
 [node name="CreditsSceneBkg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 texture = SubResource( 1 )
 
 [node name="ButtonReplay" type="Button" parent="."]
-margin_left = 712.0
+margin_left = 584.0
 margin_top = 888.0
-margin_right = 1217.0
+margin_right = 1275.0
 margin_bottom = 976.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
-text = "Volver a jugar"
+text = "Volver al inicio"
+
+[node name="IntroText" type="RichTextLabel" parent="."]
+margin_left = 392.0
+margin_top = 437.0
+margin_right = 1509.0
+margin_bottom = 545.0
+rect_pivot_offset = Vector2( 1525, -335 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]by Cristina Fàbregas[/center]"
+text = "by Cristina Fàbregas"
+override_selected_font_color = true
 
 [connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
