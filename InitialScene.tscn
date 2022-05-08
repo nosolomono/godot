@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://InitialScene.gd" type="Script" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
-[ext_resource path="res://screens/01_inicio.png" type="Texture" id=4]
+[ext_resource path="res://screens/02_start.png" type="Texture" id=4]
 [ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/button_left.png" type="Texture" id=6]
+[ext_resource path="res://assets/button_middle.png" type="Texture" id=7]
+[ext_resource path="res://assets/button_right.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -19,11 +22,23 @@ script = ExtResource( 1 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 4 )
 
+[node name="ButtonLeft" type="Sprite" parent="InitialScreenBkg"]
+position = Vector2( 160, 322 )
+texture = ExtResource( 6 )
+
+[node name="ButtonMiddle" type="Sprite" parent="InitialScreenBkg"]
+position = Vector2( 419, 322 )
+texture = ExtResource( 7 )
+
+[node name="ButtonRight" type="Sprite" parent="InitialScreenBkg"]
+position = Vector2( 675, 322 )
+texture = ExtResource( 8 )
+
 [node name="Button" type="Button" parent="."]
-margin_left = 1073.0
-margin_top = 606.0
-margin_right = 1654.0
-margin_bottom = 771.0
+margin_left = 1097.0
+margin_top = 773.0
+margin_right = 1658.0
+margin_bottom = 950.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )

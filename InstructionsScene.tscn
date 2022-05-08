@@ -1,31 +1,84 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
 [ext_resource path="res://InstructionsScene.gd" type="Script" id=4]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/02_instrucciones.png-a9e4c6a366394c24277d2fd297ed5e2c.stex"
+[ext_resource path="res://assets/button_left.png" type="Texture" id=5]
+[ext_resource path="res://assets/button_middle.png" type="Texture" id=6]
+[ext_resource path="res://screens/04_instructions.png" type="Texture" id=7]
+[ext_resource path="res://assets/button_right.png" type="Texture" id=8]
 
 [node name="InstructionsScene" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="InstructionsSceneBkg" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
-texture = SubResource( 1 )
+position = Vector2( 1054, 825 )
+texture = ExtResource( 7 )
+offset = Vector2( -94, -285 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ButtonLeft" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( -315, -83 )
+scale = Vector2( 0.349397, 0.421801 )
+texture = ExtResource( 5 )
+offset = Vector2( -319.121, -18.8488 )
+
+[node name="ButtonMiddle" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( -315, -83 )
+scale = Vector2( 0.527368, 0.423 )
+texture = ExtResource( 6 )
+offset = Vector2( 32.6195, -18.7957 )
+
+[node name="ButtonRight" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( -315, -83 )
+scale = Vector2( 0.349, 0.422 )
+texture = ExtResource( 8 )
+offset = Vector2( 416.906, -18.8405 )
+
+[node name="ButtonLeft2" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( 57, -83 )
+scale = Vector2( 0.349397, 0.421801 )
+texture = ExtResource( 5 )
+offset = Vector2( -319.121, -18.8488 )
+
+[node name="ButtonMiddle2" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( 57, -83 )
+scale = Vector2( 0.527368, 0.423 )
+texture = ExtResource( 6 )
+offset = Vector2( 32.6195, -18.7957 )
+
+[node name="ButtonRight2" type="Sprite" parent="InstructionsSceneBkg"]
+position = Vector2( 57, -83 )
+scale = Vector2( 0.349, 0.422 )
+texture = ExtResource( 8 )
+offset = Vector2( 416.906, -18.8405 )
 
 [node name="ButtonBack" type="Button" parent="."]
-margin_left = 738.0
-margin_top = 737.0
-margin_right = 1054.0
-margin_bottom = 825.0
-rect_pivot_offset = Vector2( 267, 79 )
+margin_left = 621.0
+margin_top = 697.0
+margin_right = 892.0
+margin_bottom = 772.0
+rect_pivot_offset = Vector2( 37, 30 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
 text = "Volver"
 
+[node name="ButtonRestart" type="Button" parent="."]
+margin_left = 993.0
+margin_top = 697.0
+margin_right = 1264.0
+margin_bottom = 772.0
+rect_pivot_offset = Vector2( 37, 30 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 3 )
+text = "Salir"
+
 [connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
+[connection signal="pressed" from="ButtonRestart" to="." method="_on_ButtonRestart_pressed"]

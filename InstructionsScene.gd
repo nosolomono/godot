@@ -6,3 +6,7 @@ func _ready():
 
 func _on_ButtonBack_pressed():
 	Global.goto_scene("res://GameScene.tscn")
+
+
+func _on_ButtonRestart_pressed():
+	Global.goto_scene("res://InitialScene.tscn")

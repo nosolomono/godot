@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://IntroScene.gd" type="Script" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
@@ -14,13 +14,48 @@
 [ext_resource path="res://assets/dora_intro_animation/intro_ani_8.png" type="Texture" id=12]
 [ext_resource path="res://assets/dora_intro_animation/intro_ani_9.png" type="Texture" id=13]
 [ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://actors/gata_animation/gata_idle_2.png" type="Texture" id=16]
-[ext_resource path="res://assets/camita_audrey.png" type="Texture" id=17]
-[ext_resource path="res://actors/gata_animation/gata_idle_1.png" type="Texture" id=18]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/04_intro.png-ff2ed0e3b85d033ab94b6f00f4daf26c.stex"
+[ext_resource path="res://screens/03_game_intro.png" type="Texture" id=15]
+[ext_resource path="res://actors/gata_animation/gata_idle_04.png" type="Texture" id=16]
+[ext_resource path="res://assets/armchair.png" type="Texture" id=17]
+[ext_resource path="res://actors/fish_animation/fish_bubble_04.png" type="Texture" id=18]
+[ext_resource path="res://actors/fish_animation/fish_jump_04.png" type="Texture" id=19]
+[ext_resource path="res://actors/gata_animation/gata_idle_02.png" type="Texture" id=20]
+[ext_resource path="res://actors/gata_animation/gata_idle_03.png" type="Texture" id=21]
+[ext_resource path="res://actors/gata_animation/gata_idle_01.png" type="Texture" id=22]
+[ext_resource path="res://actors/fish_animation/fish_jump_08.png" type="Texture" id=23]
+[ext_resource path="res://actors/fish_animation/fish_jump_13.png" type="Texture" id=24]
+[ext_resource path="res://actors/pendulum_animation/pendulum07.png" type="Texture" id=25]
+[ext_resource path="res://actors/pendulum_animation/pendulum04.png" type="Texture" id=26]
+[ext_resource path="res://actors/pendulum_animation/pendulum05.png" type="Texture" id=27]
+[ext_resource path="res://actors/pendulum_animation/pendulum06.png" type="Texture" id=28]
+[ext_resource path="res://actors/pendulum_animation/pendulum01.png" type="Texture" id=29]
+[ext_resource path="res://actors/pendulum_animation/pendulum02.png" type="Texture" id=30]
+[ext_resource path="res://actors/pendulum_animation/pendulum00.png" type="Texture" id=31]
+[ext_resource path="res://actors/pendulum_animation/pendulum03.png" type="Texture" id=32]
+[ext_resource path="res://actors/gata_animation/gata_awake_09.png" type="Texture" id=33]
+[ext_resource path="res://actors/fish_animation/fish_idle_02.png" type="Texture" id=34]
+[ext_resource path="res://actors/fish_animation/fish_idle_03.png" type="Texture" id=35]
+[ext_resource path="res://actors/fish_animation/fish_idle_01.png" type="Texture" id=36]
+[ext_resource path="res://actors/fish_animation/fish_jump_14.png" type="Texture" id=37]
+[ext_resource path="res://actors/fish_animation/fish_bubble_08.png" type="Texture" id=38]
+[ext_resource path="res://actors/fish_animation/fish_bubble_02.png" type="Texture" id=39]
+[ext_resource path="res://actors/fish_animation/fish_jump_11.png" type="Texture" id=40]
+[ext_resource path="res://actors/fish_animation/fish_jump_15.png" type="Texture" id=41]
+[ext_resource path="res://actors/fish_animation/fish_bubble_01.png" type="Texture" id=42]
+[ext_resource path="res://actors/fish_animation/fish_bubble_07.png" type="Texture" id=43]
+[ext_resource path="res://actors/fish_animation/fish_jump_03.png" type="Texture" id=44]
+[ext_resource path="res://actors/fish_animation/fish_jump_07.png" type="Texture" id=45]
+[ext_resource path="res://actors/fish_animation/fish_jump_09.png" type="Texture" id=46]
+[ext_resource path="res://actors/fish_animation/fish_bubble_09.png" type="Texture" id=47]
+[ext_resource path="res://actors/fish_animation/fish_bubble_06.png" type="Texture" id=48]
+[ext_resource path="res://actors/fish_animation/fish_bubble_03.png" type="Texture" id=49]
+[ext_resource path="res://actors/fish_animation/fish_bubble_05.png" type="Texture" id=50]
+[ext_resource path="res://actors/fish_animation/fish_jump_01.png" type="Texture" id=51]
+[ext_resource path="res://actors/fish_animation/fish_jump_05.png" type="Texture" id=52]
+[ext_resource path="res://actors/fish_animation/fish_jump_06.png" type="Texture" id=53]
+[ext_resource path="res://actors/fish_animation/fish_jump_10.png" type="Texture" id=54]
+[ext_resource path="res://actors/fish_animation/fish_jump_12.png" type="Texture" id=55]
+[ext_resource path="res://actors/fish_animation/fish_jump_02.png" type="Texture" id=56]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -96,10 +131,36 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "gata_idle",
-"speed": 1.0
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ ExtResource( 31 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "pendulum_idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=64]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "fish_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "fish_bubbles",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "fish_jump",
+"speed": 8.0
 } ]
 
 [node name="IntroScreen" type="Node2D"]
@@ -107,7 +168,7 @@ script = ExtResource( 1 )
 
 [node name="IntroScreenBkg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
-texture = SubResource( 1 )
+texture = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -125,9 +186,11 @@ custom_styles/normal = ExtResource( 3 )
 text = "Empezar juego"
 
 [node name="IntroAniSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 461, 545 )
+position = Vector2( 480.25, 684 )
+scale = Vector2( 1.1685, 1.51788 )
 frames = SubResource( 2 )
 animation = "intro_ani"
+frame = 1
 
 [node name="IntroText" type="RichTextLabel" parent="."]
 margin_left = 442.0
@@ -152,14 +215,28 @@ override_selected_font_color = true
 anims/RESET = SubResource( 4 )
 anims/intro_text_ani = SubResource( 5 )
 
-[node name="CamitaAudrey" type="Sprite" parent="."]
-position = Vector2( 1013, 879 )
-texture = ExtResource( 17 )
-
 [node name="AudreySprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1025, 820 )
+position = Vector2( 1147, 857 )
 frames = SubResource( 6 )
 animation = "gata_idle"
+speed_scale = 0.0
+playing = true
+
+[node name="Armchair" type="Sprite" parent="."]
+position = Vector2( 356.5, 800 )
+texture = ExtResource( 17 )
+
+[node name="SpritePendulum" type="AnimatedSprite" parent="."]
+position = Vector2( 1231, 383 )
+frames = SubResource( 18 )
+animation = "pendulum_idle"
+frame = 5
+playing = true
+
+[node name="SpriteFish" type="AnimatedSprite" parent="."]
+position = Vector2( 1641, 653 )
+frames = SubResource( 64 )
+animation = "fish_idle"
 frame = 1
 playing = true
 
