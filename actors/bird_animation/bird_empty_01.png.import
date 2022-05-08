@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu_button.png-ef098f11025b962030c5ddcaae76743d.stex"
+path="res://.import/bird_empty_01.png-aa9b0ac588e56dec7e055fb7dea8dc53.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu_button.png"
-dest_files=[ "res://.import/menu_button.png-ef098f11025b962030c5ddcaae76743d.stex" ]
+source_file="res://actors/bird_animation/bird_empty_01.png"
+dest_files=[ "res://.import/bird_empty_01.png-aa9b0ac588e56dec7e055fb7dea8dc53.stex" ]
 
 [params]
 

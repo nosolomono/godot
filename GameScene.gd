@@ -28,6 +28,14 @@ onready var _area_fish = $AreaFish
 onready var _player_fish = get_node("AreaFish/SpriteFish/PlayerFish")
 onready var _area_spider = $AreaSpider
 onready var _player_spider = get_node("AreaSpider/SpriteSpider/PlayerSpider")
+onready var _area_hen = $AreaHen
+onready var _player_hen = get_node("AreaHen/SpriteHen/PlayerHen")
+onready var _area_door = $AreaDoor
+onready var _player_door = get_node("AreaDoor/SpriteDoor/PlayerDoor")
+onready var _area_window = $AreaWindow
+onready var _player_window = get_node("AreaWindow/SpriteWindow/PlayerWindow")
+onready var _sprite_curtain = $SpriteCurtain
+onready var _player_curtain = get_node("SpriteCurtain/PlayerCurtain")
 
 func _ready():
 	# pass
@@ -49,10 +57,14 @@ func _on_ButtonLose2_pressed():
 
 
 """
-Change cursor when mouseOver on an actor / Check if Dora is awake
+Change cursor when mouseOver on an actor
+Check if Dora is awake
+Check if door / window are open
 """
 var _actor_hover = false
 var _dora_awake = false
+var _window_open = false
+var _door_open = false
 
 func _process(delta):
 	if _actor_hover == true:
@@ -64,6 +76,17 @@ func _process(delta):
 		_player_dora.play("dora_awake")
 		_sprite_dora.modulate = Color("#ff4d4d")
 		
+	"""if(_window_open == false or _door_open == false) and _hen_last_animation == "hen_spin":
+		_player_hen.play("hen_move")
+		
+	if(_door_open == false):
+		_player_curtain.play("curtain_idle")
+		
+	if(_window_open == false or _door_open == false):
+		_player_curtain.play("curtain_idle")
+		
+	if(_window_open == true and _door_open == true):
+		_player_curtain.play("curtain_idle")"""
 		
 """
 Detecting Area2D mouseOver in order to change cursor for all actors
@@ -108,6 +131,18 @@ func _on_AreaSpider_mouse_entered():
 	_actor_hover = true
 func _on_AreaSpider_mouse_exited():
 	_actor_hover = false
+func _on_AreaHen_mouse_entered():
+	_actor_hover = true
+func _on_AreaHen_mouse_exited():
+	_actor_hover = false
+func _on_AreaDoor_mouse_entered():
+	_actor_hover = true
+func _on_AreaDoor_mouse_exited():
+	_actor_hover = false
+func _on_AreaWindow_mouse_entered():
+	_actor_hover = true
+func _on_AreaWindow_mouse_exited():
+	_actor_hover = false
 	
 """
 Turn actors turn blue if mouse button is pressed outside any actor
@@ -127,6 +162,11 @@ func _input(event):
 		_area_keys.modulate = Color("#7effff")
 		_area_screen.modulate = Color("#7effff")
 		_area_fish.modulate = Color("#7effff")
+		_area_spider.modulate = Color("#7effff")
+		_area_hen.modulate = Color("#7effff")
+		_area_door.modulate = Color("#7effff")
+		_area_window.modulate = Color("#7effff")
+		_sprite_curtain.modulate = Color("#7effff")
 		
 	else:
 			
@@ -140,6 +180,11 @@ func _input(event):
 		_area_keys.modulate = Color.white
 		_area_screen.modulate = Color.white
 		_area_fish.modulate = Color.white
+		_area_spider.modulate = Color.white
+		_area_hen.modulate = Color.white
+		_area_door.modulate = Color.white
+		_area_window.modulate = Color.white
+		_sprite_curtain.modulate = Color.white
 
 """
 Audrey plays random animation on button pressed (1-3)
@@ -386,7 +431,7 @@ func _on_AreaScreen_input_event(viewport, event, shape_idx):
 
 
 """
-Keys
+Fish
 """
 var _fish_count : int = 1 as int
 
@@ -439,27 +484,133 @@ func _on_PlayerFish_animation_finished(anim_name):
 """
 Spider
 """
+var _spider_last_animation = "spider_idle"
+var _spider_down = false
+
+func _on_AreaSpider_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+
+		if _spider_last_animation == "spider_idle":
+			_player_spider.play("spider_down")
+			_spider_last_animation = _player_spider.current_animation
+
+		if _spider_last_animation == "spider_stilldown":
+			_player_spider.play("spider_up")
+			_spider_last_animation = _player_spider.current_animation
+
+func _on_PlayerSpider_animation_finished(anim_name):
+	
+	if anim_name == "spider_down":
+		_player_spider.play("spider_stilldown")
+		_spider_last_animation = _player_spider.current_animation
+		_spider_down = true
+
+	if anim_name == "spider_up":
+		_player_spider.play("spider_idle")
+		_spider_last_animation = _player_spider.current_animation
+		_spider_down = false
+
+
 
 """
 Hen
 """
+var _hen_last_animation = "hen_idle"
+var _hen_spin = false
+
+func _on_AreaHen_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		
+		if (_window_open == false or _door_open == false):
+			_player_hen.play("hen_move")
+		
+		if (_window_open == true and _door_open == true and _hen_spin == false):
+			_player_hen.play("hen_spin")
+			_hen_last_animation = _player_hen.current_animation
+			_hen_spin = true
+
+		elif (_window_open == true and _door_open == true and _hen_spin == true):
+			_player_hen.play("hen_spin")
+			_hen_last_animation = _player_hen.current_animation
+			_dora_awake = true
+			
+
+func _on_PlayerHen_animation_finished(anim_name):
+	
+	if anim_name == "hen_move":
+		_player_hen.play("hen_idle")
 
 """
 Door
 """
+var _door_last_animation = "door_idle"
+
+func _on_AreaDoor_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+
+		if _door_last_animation == "door_idle":
+			_player_door.play("door_open")
+			_door_last_animation = _player_spider.current_animation
+			
+			if _window_open == true:
+				_player_curtain.play("curtain_move")
+
+		if _door_last_animation == "door_stillopen":
+			_player_door.play("door_close")
+			_spider_last_animation = _player_spider.current_animation
+
+func _on_PlayerDoor_animation_finished(anim_name):
+	if anim_name == "door_open":
+		_player_door.play("door_stillopen")
+		_door_last_animation = _player_door.current_animation
+		_door_open = true
+		
+	if anim_name == "door_close":
+		_player_door.play("door_idle")
+		_door_last_animation = _player_door.current_animation
+		_door_open = false
+		_player_curtain.play("curtain_idle")
+		_player_hen.play("hen_idle")
+
 
 """
 Window & Curtain
 """
+var _window_last_animation = "window_idle"
+
+func _on_AreaWindow_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+
+		if _window_last_animation == "window_idle":
+			_player_window.play("window_open")
+			_window_last_animation = _player_window.current_animation
+			
+			if _door_open == true:
+				_player_curtain.play("curtain_move")
+			
+		if _window_last_animation == "window_stillopen":
+			_player_window.play("window_close")
+			_window_last_animation = _player_window.current_animation
+			_player_curtain.play("curtain_idle")
+
+func _on_PlayerWindow_animation_finished(anim_name):
+	
+	if anim_name == "window_open":
+		_player_window.play("window_stillopen")
+		_window_last_animation = _player_window.current_animation
+		_window_open = true;
+
+	if anim_name == "window_close":
+		_player_window.play("window_idle")
+		_window_last_animation = _player_window.current_animation
+		_window_open = false;
+		_player_hen.play("hen_idle")
+		
+		print("Door open? ", _door_open)
+		print("Window open? ", _window_open)
+
+
 
 """
 Bird
 """
-
-
-
-
-
-
-
-

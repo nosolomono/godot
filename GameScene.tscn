@@ -1,10 +1,10 @@
-[gd_scene load_steps=382 format=2]
+[gd_scene load_steps=501 format=2]
 
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://GameScene.gd" type="Script" id=3]
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/menu_button.png" type="Texture" id=5]
+[ext_resource path="res://assets/menu.png" type="Texture" id=5]
 [ext_resource path="res://MenuButton.gd" type="Script" id=6]
 [ext_resource path="res://actors/gata_animation/gata_idle_04.png" type="Texture" id=7]
 [ext_resource path="res://actors/gata_animation/gata_idle_05.png" type="Texture" id=8]
@@ -312,6 +312,268 @@
 [ext_resource path="res://actors/spider_animation/spider_stilldown_05.png" type="Texture" id=310]
 [ext_resource path="res://actors/spider_animation/spider_stilldown_04.png" type="Texture" id=311]
 [ext_resource path="res://actors/spider_animation/spider_stilldown_01.png" type="Texture" id=312]
+[ext_resource path="res://actors/hen_animation/hen_still_01.png" type="Texture" id=313]
+[ext_resource path="res://actors/hen_animation/hen_move_02.png" type="Texture" id=314]
+[ext_resource path="res://actors/hen_animation/hen_move_03.png" type="Texture" id=315]
+[ext_resource path="res://actors/hen_animation/hen_move_04.png" type="Texture" id=316]
+[ext_resource path="res://actors/hen_animation/hen_move_01.png" type="Texture" id=317]
+[ext_resource path="res://actors/hen_animation/hen_move_05.png" type="Texture" id=318]
+[ext_resource path="res://actors/hen_animation/hen_spin_03.png" type="Texture" id=319]
+[ext_resource path="res://actors/hen_animation/hen_spin_06.png" type="Texture" id=320]
+[ext_resource path="res://actors/hen_animation/hen_spin_02.png" type="Texture" id=321]
+[ext_resource path="res://actors/hen_animation/hen_spin_09.png" type="Texture" id=322]
+[ext_resource path="res://actors/hen_animation/hen_spin_14.png" type="Texture" id=323]
+[ext_resource path="res://actors/hen_animation/hen_spin_05.png" type="Texture" id=324]
+[ext_resource path="res://actors/hen_animation/hen_spin_01.png" type="Texture" id=325]
+[ext_resource path="res://actors/hen_animation/hen_spin_08.png" type="Texture" id=326]
+[ext_resource path="res://actors/hen_animation/hen_spin_11.png" type="Texture" id=327]
+[ext_resource path="res://actors/hen_animation/hen_spin_13.png" type="Texture" id=328]
+[ext_resource path="res://actors/hen_animation/hen_spin_07.png" type="Texture" id=329]
+[ext_resource path="res://actors/hen_animation/hen_spin_10.png" type="Texture" id=330]
+[ext_resource path="res://actors/hen_animation/hen_spin_12.png" type="Texture" id=331]
+[ext_resource path="res://actors/hen_animation/hen_spin_04.png" type="Texture" id=332]
+[ext_resource path="res://actors/door_animation/door_close_01.png" type="Texture" id=333]
+[ext_resource path="res://actors/door_animation/door_opening_01.png" type="Texture" id=334]
+[ext_resource path="res://actors/door_animation/door_opening_03.png" type="Texture" id=335]
+[ext_resource path="res://actors/door_animation/door_open_01.png" type="Texture" id=336]
+[ext_resource path="res://actors/door_animation/door_closing_01.png" type="Texture" id=337]
+[ext_resource path="res://actors/door_animation/door_closing_02.png" type="Texture" id=338]
+[ext_resource path="res://actors/door_animation/door_opening_02.png" type="Texture" id=339]
+[ext_resource path="res://actors/door_animation/door_closing_03.png" type="Texture" id=340]
+[ext_resource path="res://actors/window_animation/window00.png" type="Texture" id=341]
+[ext_resource path="res://actors/window_animation/window02.png" type="Texture" id=342]
+[ext_resource path="res://actors/bird_animation/bird_appears_01.png" type="Texture" id=343]
+[ext_resource path="res://actors/window_animation/window01.png" type="Texture" id=344]
+[ext_resource path="res://actors/curtain_animation/curtain_still_01.png" type="Texture" id=345]
+[ext_resource path="res://actors/curtain_animation/curtain_move_01.png" type="Texture" id=346]
+[ext_resource path="res://actors/curtain_animation/curtain_move_02.png" type="Texture" id=347]
+[ext_resource path="res://actors/curtain_animation/curtain_move_03.png" type="Texture" id=348]
+[ext_resource path="res://actors/curtain_animation/curtain_move_06.png" type="Texture" id=349]
+[ext_resource path="res://actors/curtain_animation/curtain_move_05.png" type="Texture" id=350]
+[ext_resource path="res://actors/curtain_animation/curtain_move_04.png" type="Texture" id=351]
+[ext_resource path="res://actors/bird_animation/bird_continues_01.png" type="Texture" id=352]
+[ext_resource path="res://actors/bird_animation/bird_continues_02.png" type="Texture" id=353]
+[ext_resource path="res://actors/bird_animation/bird_appears_love_01.png" type="Texture" id=354]
+[ext_resource path="res://actors/bird_animation/bird_continues_03.png" type="Texture" id=355]
+[ext_resource path="res://actors/bird_animation/bird_enters_01.png" type="Texture" id=356]
+[ext_resource path="res://actors/bird_animation/bird_enters_02.png" type="Texture" id=357]
+[ext_resource path="res://actors/bird_animation/bird_appears_love_02.png" type="Texture" id=358]
+[ext_resource path="res://actors/bird_animation/bird_enters_03.png" type="Texture" id=359]
+[ext_resource path="res://actors/bird_animation/bird_enters_love_01.png" type="Texture" id=360]
+[ext_resource path="res://actors/bird_animation/bird_enters_love_02.png" type="Texture" id=361]
+[ext_resource path="res://actors/bird_animation/bird_appears_love_03.png" type="Texture" id=362]
+[ext_resource path="res://actors/bird_animation/bird_appears_love_04.png" type="Texture" id=363]
+[ext_resource path="res://actors/bird_animation/bird_enters_love_04.png" type="Texture" id=364]
+[ext_resource path="res://actors/bird_animation/bird_passes_01.png" type="Texture" id=365]
+[ext_resource path="res://actors/bird_animation/bird_enters_love_03.png" type="Texture" id=366]
+[ext_resource path="res://actors/bird_animation/bird_passes_02.png" type="Texture" id=367]
+[ext_resource path="res://actors/bird_animation/bird_passes_03.png" type="Texture" id=368]
+[ext_resource path="res://actors/bird_animation/bird_passes_04.png" type="Texture" id=369]
+[ext_resource path="res://actors/bird_animation/bird_passes_09.png" type="Texture" id=370]
+[ext_resource path="res://actors/bird_animation/bird_passes_10.png" type="Texture" id=371]
+[ext_resource path="res://actors/bird_animation/bird_empty_01.png" type="Texture" id=372]
+[ext_resource path="res://actors/bird_animation/bird_passes_05.png" type="Texture" id=373]
+[ext_resource path="res://actors/bird_animation/bird_falls3_02.png" type="Texture" id=374]
+[ext_resource path="res://actors/bird_animation/bird_falls3_03.png" type="Texture" id=375]
+[ext_resource path="res://actors/bird_animation/bird_falls3_01.png" type="Texture" id=376]
+[ext_resource path="res://actors/bird_animation/bird_falls3_04.png" type="Texture" id=377]
+[ext_resource path="res://actors/bird_animation/bird_falls1_01.png" type="Texture" id=378]
+[ext_resource path="res://actors/bird_animation/bird_falls1_02.png" type="Texture" id=379]
+[ext_resource path="res://actors/bird_animation/bird_falls1_03.png" type="Texture" id=380]
+[ext_resource path="res://actors/bird_animation/bird_falls2_02.png" type="Texture" id=381]
+[ext_resource path="res://actors/bird_animation/bird_falls2_03.png" type="Texture" id=382]
+[ext_resource path="res://actors/bird_animation/bird_falls2_01.png" type="Texture" id=383]
+[ext_resource path="res://actors/bird_animation/bird_falls3_10.png" type="Texture" id=384]
+[ext_resource path="res://actors/bird_animation/bird_falls3_07.png" type="Texture" id=385]
+[ext_resource path="res://actors/bird_animation/bird_falls3_09.png" type="Texture" id=386]
+[ext_resource path="res://actors/bird_animation/bird_falls3_08.png" type="Texture" id=387]
+[ext_resource path="res://actors/bird_animation/bird_falls3_06.png" type="Texture" id=388]
+[ext_resource path="res://actors/bird_animation/bird_falls3_05.png" type="Texture" id=389]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_01.png" type="Texture" id=390]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_10.png" type="Texture" id=391]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_18.png" type="Texture" id=392]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_15.png" type="Texture" id=393]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_07.png" type="Texture" id=394]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_17.png" type="Texture" id=395]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_08.png" type="Texture" id=396]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_19.png" type="Texture" id=397]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_16.png" type="Texture" id=398]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_02.png" type="Texture" id=399]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_06.png" type="Texture" id=400]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_03.png" type="Texture" id=401]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_13.png" type="Texture" id=402]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_11.png" type="Texture" id=403]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_05.png" type="Texture" id=404]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_14.png" type="Texture" id=405]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_04.png" type="Texture" id=406]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_12.png" type="Texture" id=407]
+[ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_09.png" type="Texture" id=408]
+
+[sub_resource type="SpriteFrames" id=80]
+animations = [ {
+"frames": [ ExtResource( 334 ), ExtResource( 339 ), ExtResource( 335 ) ],
+"loop": false,
+"name": "door_open",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 333 ) ],
+"loop": false,
+"name": "door_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 336 ) ],
+"loop": false,
+"name": "dor_stillopen",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 337 ), ExtResource( 338 ), ExtResource( 340 ) ],
+"loop": false,
+"name": "door_close",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=85]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "door_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=81]
+resource_name = "door_close"
+length = 0.375
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "door_close" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "door_idle"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "door_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "door_open"
+length = 0.375
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "door_open" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "door_stillopen"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "dor_stillopen" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="SpriteFrames" id=45]
 animations = [ {
@@ -507,139 +769,6 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
-}
-
-[sub_resource type="SpriteFrames" id=64]
-animations = [ {
-"frames": [ ExtResource( 266 ), ExtResource( 264 ), ExtResource( 265 ) ],
-"loop": true,
-"name": "fish_idle",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 276 ), ExtResource( 273 ), ExtResource( 283 ), ExtResource( 267 ), ExtResource( 284 ), ExtResource( 282 ), ExtResource( 277 ), ExtResource( 272 ), ExtResource( 281 ) ],
-"loop": true,
-"name": "fish_bubbles",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 285 ), ExtResource( 290 ), ExtResource( 278 ), ExtResource( 268 ), ExtResource( 286 ), ExtResource( 287 ), ExtResource( 279 ), ExtResource( 269 ), ExtResource( 280 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 289 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 275 ) ],
-"loop": true,
-"name": "fish_jump",
-"speed": 8.0
-} ]
-
-[sub_resource type="Animation" id=68]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "fish_jump" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=67]
-resource_name = "fish_bubbles"
-length = 1.125
-step = 0.125
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "fish_bubbles" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
-}
-
-[sub_resource type="Animation" id=66]
-resource_name = "fish_idle"
-length = 0.375
-loop = true
-step = 0.125
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "fish_idle" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-
-[sub_resource type="Animation" id=65]
-resource_name = "fish_jump"
-length = 1.875
-step = 0.125
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "fish_jump" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
 }
 
 [sub_resource type="SpriteFrames" id=56]
@@ -1671,6 +1800,163 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
 }
 
+[sub_resource type="SpriteFrames" id=75]
+animations = [ {
+"frames": [ ExtResource( 313 ) ],
+"loop": false,
+"name": "hen_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 317 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 318 ) ],
+"loop": true,
+"name": "hen_move",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 325 ), ExtResource( 321 ), ExtResource( 319 ), ExtResource( 332 ), ExtResource( 324 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 326 ), ExtResource( 322 ), ExtResource( 330 ), ExtResource( 327 ), ExtResource( 331 ), ExtResource( 328 ), ExtResource( 323 ) ],
+"loop": false,
+"name": "hen_spin",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaHen/SpriteHen:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "hen_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaHen/SpriteHen:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AreaHen/SpriteHen:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3.0 ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "hen_idle"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaHen/SpriteHen:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "hen_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaHen/SpriteHen:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "hen_move"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaHen/SpriteHen:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "hen_move" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaHen/SpriteHen:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "hen_spin"
+length = 1.75
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("AreaHen/SpriteHen:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "hen_spin" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AreaHen/SpriteHen:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AreaHen/SpriteHen:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3.0 ]
+}
+
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ ExtResource( 92 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 86 ) ],
@@ -1961,6 +2247,462 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 
+[sub_resource type="SpriteFrames" id=86]
+animations = [ {
+"frames": [ ExtResource( 341 ) ],
+"loop": true,
+"name": "window_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 344 ), ExtResource( 342 ) ],
+"loop": true,
+"name": "window_open",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 342 ), ExtResource( 344 ) ],
+"loop": true,
+"name": "window_close",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 342 ) ],
+"loop": true,
+"name": "window_stillopen",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=94]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "window_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=88]
+resource_name = "window_close"
+length = 0.25
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "window_close" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=89]
+resource_name = "window_idle"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "window_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=90]
+resource_name = "window_open"
+length = 0.25
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "window_open" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=91]
+resource_name = "window_stillopen"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "window_stillopen" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="SpriteFrames" id=96]
+animations = [ {
+"frames": [ ExtResource( 356 ), ExtResource( 357 ), ExtResource( 359 ) ],
+"loop": true,
+"name": "bird_enters",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 360 ), ExtResource( 361 ), ExtResource( 366 ), ExtResource( 364 ) ],
+"loop": true,
+"name": "bird_enters_love",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 343 ) ],
+"loop": false,
+"name": "bird_appears",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
+"loop": true,
+"name": "bird_continues",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 372 ) ],
+"loop": true,
+"name": "bird_empty",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 378 ), ExtResource( 379 ), ExtResource( 380 ) ],
+"loop": true,
+"name": "bird_falls1",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 376 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 377 ), ExtResource( 389 ), ExtResource( 388 ), ExtResource( 385 ), ExtResource( 387 ), ExtResource( 386 ), ExtResource( 384 ) ],
+"loop": true,
+"name": "bird_falls3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
+"loop": true,
+"name": "bird_falls2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
+"loop": true,
+"name": "bird_passes",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
+"loop": true,
+"name": "bird_leaves",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 354 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 363 ) ],
+"loop": true,
+"name": "bird_appears_love",
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=64]
+animations = [ {
+"frames": [ ExtResource( 266 ), ExtResource( 264 ), ExtResource( 265 ) ],
+"loop": true,
+"name": "fish_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 276 ), ExtResource( 273 ), ExtResource( 283 ), ExtResource( 267 ), ExtResource( 284 ), ExtResource( 282 ), ExtResource( 277 ), ExtResource( 272 ), ExtResource( 281 ) ],
+"loop": true,
+"name": "fish_bubbles",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 285 ), ExtResource( 290 ), ExtResource( 278 ), ExtResource( 268 ), ExtResource( 286 ), ExtResource( 287 ), ExtResource( 279 ), ExtResource( 269 ), ExtResource( 280 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 289 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 275 ) ],
+"loop": true,
+"name": "fish_jump",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=68]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "fish_jump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "fish_bubbles"
+length = 1.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fish_bubbles" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "fish_idle"
+length = 0.375
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fish_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "fish_jump"
+length = 1.875
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fish_jump" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+}
+
+[sub_resource type="SpriteFrames" id=87]
+animations = [ {
+"frames": [ ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 350 ), ExtResource( 349 ) ],
+"loop": true,
+"name": "curtain_move",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 345 ) ],
+"loop": false,
+"name": "curtain_idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="Animation" id=95]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteCurtain:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "curtain_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteCurtain:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "curtain_idle"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteCurtain:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "curtain_idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteCurtain:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=93]
+resource_name = "curtain_move"
+length = 0.75
+loop = true
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteCurtain:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "curtain_move" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SpriteCurtain:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
 [sub_resource type="SpriteFrames" id=69]
 animations = [ {
 "frames": [ ExtResource( 302 ), ExtResource( 304 ), ExtResource( 301 ), ExtResource( 303 ), ExtResource( 305 ) ],
@@ -1973,12 +2715,12 @@ animations = [ {
 "name": "spider_down",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 291 ), ExtResource( 292 ), ExtResource( 294 ), ExtResource( 295 ), ExtResource( 293 ) ],
+"frames": [ ExtResource( 291 ), ExtResource( 292 ), ExtResource( 294 ), ExtResource( 295 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ), ExtResource( 293 ) ],
 "loop": false,
 "name": "spider_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 312 ), ExtResource( 309 ), ExtResource( 307 ), ExtResource( 311 ), ExtResource( 310 ), ExtResource( 306 ), ExtResource( 308 ) ],
+"frames": [ ExtResource( 312 ), ExtResource( 309 ), ExtResource( 307 ), ExtResource( 311 ), ExtResource( 310 ), ExtResource( 306 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ) ],
 "loop": false,
 "name": "spider_stilldown",
 "speed": 8.0
@@ -2042,7 +2784,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=70]
 resource_name = "spider_idle"
-length = 0.625
+length = 2.0
+loop = true
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -2054,7 +2797,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "spider_down" ]
+"values": [ "spider_idle" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:frame")
@@ -2063,15 +2806,16 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 
 [sub_resource type="Animation" id=72]
 resource_name = "spider_stilldown"
-length = 0.875
+length = 2.0
+loop = true
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -2092,10 +2836,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
 
 [sub_resource type="Animation" id=73]
@@ -2140,6 +2884,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=97]
+animations = [ {
+"frames": [ ExtResource( 390 ), ExtResource( 399 ), ExtResource( 401 ), ExtResource( 406 ), ExtResource( 404 ), ExtResource( 400 ), ExtResource( 394 ), ExtResource( 396 ), ExtResource( 408 ), ExtResource( 391 ), ExtResource( 403 ), ExtResource( 407 ), ExtResource( 402 ), ExtResource( 405 ), ExtResource( 393 ), ExtResource( 398 ), ExtResource( 395 ), ExtResource( 392 ), ExtResource( 397 ) ],
+"loop": true,
+"name": "gata_chasebird",
+"speed": 8.0
+} ]
+
 [node name="GameScene" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -2169,9 +2921,9 @@ __meta__ = {
 
 [node name="ButtonWin" type="Button" parent="."]
 margin_left = 448.0
-margin_top = -112.0
+margin_top = -414.0
 margin_right = 744.0
-margin_bottom = -24.0
+margin_bottom = -326.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
@@ -2181,9 +2933,9 @@ text = "Ganas"
 
 [node name="ButtonLose1" type="Button" parent="."]
 margin_left = 768.0
-margin_top = -112.0
+margin_top = -414.0
 margin_right = 1064.0
-margin_bottom = -24.0
+margin_bottom = -326.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
@@ -2193,15 +2945,37 @@ text = "Pierdes1"
 
 [node name="ButtonLose2" type="Button" parent="."]
 margin_left = 1088.0
-margin_top = -112.0
+margin_top = -414.0
 margin_right = 1384.0
-margin_bottom = -24.0
+margin_bottom = -326.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 1 )
 text = "Pierdes2"
+
+[node name="AreaDoor" type="Area2D" parent="."]
+
+[node name="SpriteDoor" type="AnimatedSprite" parent="AreaDoor"]
+position = Vector2( 296, 514 )
+frames = SubResource( 80 )
+animation = "door_idle"
+
+[node name="PlayerDoor" type="AnimationPlayer" parent="AreaDoor/SpriteDoor"]
+autoplay = "door_idle"
+reset_on_save = false
+anims/RESET = SubResource( 85 )
+anims/door_close = SubResource( 81 )
+anims/door_idle = SubResource( 82 )
+anims/door_open = SubResource( 83 )
+anims/door_stillopen = SubResource( 84 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaDoor"]
+polygon = PoolVector2Array( 138, 139, 131, 257, 138, 531, 207, 501, 280, 520, 331, 565, 338, 541, 353, 545, 358, 563, 349, 593, 357, 603, 384, 601, 419, 649, 433, 712, 445, 709, 426, 182, 169, 130 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SpriteFan" type="AnimatedSprite" parent="."]
 position = Vector2( 890.5, 71.5 )
@@ -2232,24 +3006,6 @@ anims/screen_stop = SubResource( 63 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaScreen"]
 polygon = PoolVector2Array( -8, -33, -152, -73, -202, -35, -188, 181, 68, 229, 252, 123, 248, 3, 190, -107, 128, -119 )
 
-[node name="AreaFish" type="Area2D" parent="."]
-position = Vector2( 1641, 653 )
-
-[node name="SpriteFish" type="AnimatedSprite" parent="AreaFish"]
-frames = SubResource( 64 )
-animation = "fish_bubbles"
-
-[node name="PlayerFish" type="AnimationPlayer" parent="AreaFish/SpriteFish"]
-autoplay = "fish_idle"
-reset_on_save = false
-anims/RESET = SubResource( 68 )
-anims/fish_bubbles = SubResource( 67 )
-anims/fish_idle = SubResource( 66 )
-anims/fish_jump = SubResource( 65 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaFish"]
-polygon = PoolVector2Array( -87, -46, -145, 46, -119, 122, -15, 164, 55, 142, 137, 82, 111, 0, 67, -58, -21, -68 )
-
 [node name="AreaKeys" type="Area2D" parent="."]
 position = Vector2( 931, 525.5 )
 
@@ -2266,7 +3022,6 @@ anims/keys_idle = SubResource( 57 )
 anims/keys_play = SubResource( 58 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaKeys"]
-visible = false
 polygon = PoolVector2Array( 154, -41.5, -149, -34.5, -188, -7.5, -183, 49.5, 189, 26.5, 194, -11.5 )
 
 [node name="AreaChain" type="Area2D" parent="."]
@@ -2373,11 +3128,30 @@ anims/metronome_play = SubResource( 22 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaMetronome"]
 polygon = PoolVector2Array( -1, -55, -29, -15, -33, 46, 31, 48, 29, -18 )
 
+[node name="AreaHen" type="Area2D" parent="."]
+position = Vector2( 575, 229 )
+
+[node name="SpriteHen" type="AnimatedSprite" parent="AreaHen"]
+frames = SubResource( 75 )
+animation = "hen_idle"
+speed_scale = 3.0
+
+[node name="PlayerHen" type="AnimationPlayer" parent="AreaHen/SpriteHen"]
+root_node = NodePath("../../..")
+autoplay = "hen_idle"
+anims/RESET = SubResource( 79 )
+anims/hen_idle = SubResource( 76 )
+anims/hen_move = SubResource( 77 )
+anims/hen_spin = SubResource( 78 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaHen"]
+polygon = PoolVector2Array( -24, -28, -70, 0, -68, 49, -2, 79, 51, 41, 41, -64, 5, -74 )
+
 [node name="SpritePendulum" type="AnimatedSprite" parent="."]
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 6
+frame = 3
 playing = true
 
 [node name="SpriteDora" type="AnimatedSprite" parent="."]
@@ -2400,7 +3174,7 @@ collision_layer = 16
 position = Vector2( 80, -6 )
 frames = SubResource( 6 )
 animation = "gata_idle"
-frame = 1
+frame = 6
 
 [node name="PlayerAudrey" type="AnimationPlayer" parent="AreaAudrey/SpriteAudrey"]
 reset_on_save = false
@@ -2416,12 +3190,75 @@ position = Vector2( -14.3395, 0.531259 )
 scale = Vector2( 2.21946, 1.43555 )
 polygon = PoolVector2Array( 71.3414, -37.2897, 50.6157, -27.5374, 33.4944, -26.1441, 12.7686, -39.3795, -1.64929, -19.8748, -21.4739, -13.6054, -21.4739, 8.68573, -12.9133, 38.6395, 3.75745, 54.6612, 21.7798, 68.5931, 40.7033, 63.717, 49.264, 62.3238, 78.0998, 61.6272, 97.0233, 52.5714, 106.035, 14.9551, 102.881, -15.6952, 83.9571, -35.8965 )
 
+[node name="AreaWindow" type="Area2D" parent="."]
+position = Vector2( 1753, 373 )
+
+[node name="SpriteWindow" type="AnimatedSprite" parent="AreaWindow"]
+frames = SubResource( 86 )
+animation = "window_idle"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerWindow" type="AnimationPlayer" parent="AreaWindow/SpriteWindow"]
+autoplay = "window_idle"
+anims/RESET = SubResource( 94 )
+anims/window_close = SubResource( 88 )
+anims/window_idle = SubResource( 89 )
+anims/window_open = SubResource( 90 )
+anims/window_stillopen = SubResource( 91 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaWindow"]
+polygon = PoolVector2Array( -105, -224, -108, -187, -183, 118, -73, 194, -39, 204, -25, 226, 59, 262, 132, 246, 132, -266, 2, -245 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SpriteBird" type="AnimatedSprite" parent="."]
+position = Vector2( 1067, 570 )
+frames = SubResource( 96 )
+animation = "bird_falls1"
+playing = true
+
+[node name="AreaFish" type="Area2D" parent="."]
+position = Vector2( 1641, 653 )
+
+[node name="SpriteFish" type="AnimatedSprite" parent="AreaFish"]
+frames = SubResource( 64 )
+animation = "fish_bubbles"
+
+[node name="PlayerFish" type="AnimationPlayer" parent="AreaFish/SpriteFish"]
+autoplay = "fish_idle"
+reset_on_save = false
+anims/RESET = SubResource( 68 )
+anims/fish_bubbles = SubResource( 67 )
+anims/fish_idle = SubResource( 66 )
+anims/fish_jump = SubResource( 65 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaFish"]
+polygon = PoolVector2Array( -87, -46, -145, 46, -119, 122, -15, 164, 55, 142, 137, 82, 111, 0, 67, -58, -21, -68 )
+
+[node name="SpriteCurtain" type="AnimatedSprite" parent="."]
+position = Vector2( 1731, 375 )
+frames = SubResource( 87 )
+animation = "curtain_idle"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerCurtain" type="AnimationPlayer" parent="SpriteCurtain"]
+root_node = NodePath("../..")
+anims/RESET = SubResource( 95 )
+anims/curtain_idle = SubResource( 92 )
+anims/curtain_move = SubResource( 93 )
+
 [node name="AreaSpider" type="Area2D" parent="."]
 position = Vector2( 1718, 183 )
 
 [node name="SpriteSpider" type="AnimatedSprite" parent="AreaSpider"]
 frames = SubResource( 69 )
-animation = "spider_down"
+animation = "spider_idle"
+frame = 15
 
 [node name="PlayerSpider" type="AnimationPlayer" parent="AreaSpider/SpriteSpider"]
 autoplay = "spider_idle"
@@ -2460,17 +3297,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="SpriteGatachasebird" type="AnimatedSprite" parent="."]
+position = Vector2( 899, 644 )
+frames = SubResource( 97 )
+animation = "gata_chasebird"
+frame = 1
+playing = true
+
 [connection signal="gui_input" from="CanvasLayer/ControlOutside" to="." method="_on_ControlOutside_gui_input"]
 [connection signal="pressed" from="ButtonWin" to="." method="_on_ButtonWin_pressed"]
 [connection signal="pressed" from="ButtonLose1" to="." method="_on_ButtonLose1_pressed"]
 [connection signal="pressed" from="ButtonLose2" to="." method="_on_ButtonLose2_pressed"]
+[connection signal="input_event" from="AreaDoor" to="." method="_on_AreaDoor_input_event"]
+[connection signal="mouse_entered" from="AreaDoor" to="." method="_on_AreaDoor_mouse_entered"]
+[connection signal="mouse_exited" from="AreaDoor" to="." method="_on_AreaDoor_mouse_exited"]
+[connection signal="animation_finished" from="AreaDoor/SpriteDoor/PlayerDoor" to="." method="_on_PlayerDoor_animation_finished"]
 [connection signal="input_event" from="AreaScreen" to="." method="_on_AreaScreen_input_event"]
 [connection signal="mouse_entered" from="AreaScreen" to="." method="_on_AreaScreen_mouse_entered"]
 [connection signal="mouse_exited" from="AreaScreen" to="." method="_on_AreaScreen_mouse_exited"]
-[connection signal="input_event" from="AreaFish" to="." method="_on_AreaFish_input_event"]
-[connection signal="mouse_entered" from="AreaFish" to="." method="_on_AreaFish_mouse_entered"]
-[connection signal="mouse_exited" from="AreaFish" to="." method="_on_AreaFish_mouse_exited"]
-[connection signal="animation_finished" from="AreaFish/SpriteFish/PlayerFish" to="." method="_on_PlayerFish_animation_finished"]
 [connection signal="input_event" from="AreaKeys" to="." method="_on_AreaKeys_input_event"]
 [connection signal="mouse_entered" from="AreaKeys" to="." method="_on_AreaKeys_mouse_entered"]
 [connection signal="mouse_exited" from="AreaKeys" to="." method="_on_AreaKeys_mouse_exited"]
@@ -2494,7 +3338,23 @@ __meta__ = {
 [connection signal="input_event" from="AreaMetronome" to="." method="_on_AreaMetronome_input_event"]
 [connection signal="mouse_entered" from="AreaMetronome" to="." method="_on_AreaMetronome_mouse_entered"]
 [connection signal="mouse_exited" from="AreaMetronome" to="." method="_on_AreaMetronome_mouse_exited"]
+[connection signal="input_event" from="AreaHen" to="." method="_on_AreaHen_input_event"]
+[connection signal="mouse_entered" from="AreaHen" to="." method="_on_AreaHen_mouse_entered"]
+[connection signal="mouse_exited" from="AreaHen" to="." method="_on_AreaHen_mouse_exited"]
+[connection signal="animation_finished" from="AreaHen/SpriteHen/PlayerHen" to="." method="_on_PlayerHen_animation_finished"]
 [connection signal="input_event" from="AreaAudrey" to="." method="_on_AreaAudrey_input_event"]
 [connection signal="mouse_entered" from="AreaAudrey" to="." method="_on_AreaAudrey_mouse_entered"]
 [connection signal="mouse_exited" from="AreaAudrey" to="." method="_on_AreaAudrey_mouse_exited"]
 [connection signal="animation_finished" from="AreaAudrey/SpriteAudrey/PlayerAudrey" to="." method="_on_PlayerAudrey_animation_finished"]
+[connection signal="input_event" from="AreaWindow" to="." method="_on_AreaWindow_input_event"]
+[connection signal="mouse_entered" from="AreaWindow" to="." method="_on_AreaWindow_mouse_entered"]
+[connection signal="mouse_exited" from="AreaWindow" to="." method="_on_AreaWindow_mouse_exited"]
+[connection signal="animation_finished" from="AreaWindow/SpriteWindow/PlayerWindow" to="." method="_on_PlayerWindow_animation_finished"]
+[connection signal="input_event" from="AreaFish" to="." method="_on_AreaFish_input_event"]
+[connection signal="mouse_entered" from="AreaFish" to="." method="_on_AreaFish_mouse_entered"]
+[connection signal="mouse_exited" from="AreaFish" to="." method="_on_AreaFish_mouse_exited"]
+[connection signal="animation_finished" from="AreaFish/SpriteFish/PlayerFish" to="." method="_on_PlayerFish_animation_finished"]
+[connection signal="input_event" from="AreaSpider" to="." method="_on_AreaSpider_input_event"]
+[connection signal="mouse_entered" from="AreaSpider" to="." method="_on_AreaSpider_mouse_entered"]
+[connection signal="mouse_exited" from="AreaSpider" to="." method="_on_AreaSpider_mouse_exited"]
+[connection signal="animation_finished" from="AreaSpider/SpriteSpider/PlayerSpider" to="." method="_on_PlayerSpider_animation_finished"]

@@ -230,14 +230,13 @@ texture = ExtResource( 17 )
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 5
+frame = 4
 playing = true
 
 [node name="SpriteFish" type="AnimatedSprite" parent="."]
 position = Vector2( 1641, 653 )
 frames = SubResource( 64 )
 animation = "fish_idle"
-frame = 1
 playing = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
