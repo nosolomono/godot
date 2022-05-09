@@ -4,17 +4,14 @@
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Lose2Scene.gd" type="Script" id=4]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/09_pierdes2.png-e2e8e2f0044098e068e013640142f814.stex"
+[ext_resource path="res://screens/07_lose2.png" type="Texture" id=5]
 
 [node name="Lose2Scene" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Lose2SceneBkg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
-texture = SubResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="ButtonReplay" type="Button" parent="."]
 margin_left = 463.0

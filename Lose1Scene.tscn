@@ -4,12 +4,12 @@
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
 [ext_resource path="res://Lose1Scene.gd" type="Script" id=4]
-[ext_resource path="res://screens/07_pierdes1b.png" type="Texture" id=5]
-[ext_resource path="res://screens/06_pierdes1a.png" type="Texture" id=6]
+[ext_resource path="res://screens/06_lose1b.png" type="Texture" id=5]
+[ext_resource path="res://screens/05_lose1a.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "lose1_scene_ani",
 "speed": 0.2

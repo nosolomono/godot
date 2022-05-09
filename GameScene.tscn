@@ -416,14 +416,14 @@ animations = [ {
 "name": "door_open",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 333 ) ],
-"loop": false,
-"name": "door_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 336 ) ],
 "loop": false,
 "name": "dor_stillopen",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 333 ) ],
+"loop": false,
+"name": "door_idle",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 337 ), ExtResource( 338 ), ExtResource( 340 ) ],
@@ -871,9 +871,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=46]
 animations = [ {
-"frames": [ ExtResource( 218 ), ExtResource( 210 ), ExtResource( 226 ) ],
+"frames": [ ExtResource( 234 ), ExtResource( 233 ), ExtResource( 217 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 219 ), ExtResource( 208 ) ],
+"loop": true,
+"name": "chain_spin",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 207 ) ],
 "loop": false,
-"name": "chain_up",
+"name": "chain_idle",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 236 ), ExtResource( 235 ), ExtResource( 237 ) ],
@@ -886,14 +891,9 @@ animations = [ {
 "name": "chain_bird",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 234 ), ExtResource( 233 ), ExtResource( 217 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 219 ), ExtResource( 208 ) ],
-"loop": true,
-"name": "chain_spin",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 207 ) ],
+"frames": [ ExtResource( 218 ), ExtResource( 210 ), ExtResource( 226 ) ],
 "loop": false,
-"name": "chain_idle",
+"name": "chain_up",
 "speed": 8.0
 } ]
 
@@ -1244,19 +1244,9 @@ animations = [ {
 "name": "drawer_close",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 164 ), ExtResource( 168 ), ExtResource( 163 ) ],
+"frames": [ ExtResource( 151 ) ],
 "loop": false,
-"name": "drawer_open1",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
-"loop": false,
-"name": "drawer_eat",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
-"loop": false,
-"name": "drawer_open2",
+"name": "drawer_idle",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 171 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 159 ) ],
@@ -1264,9 +1254,19 @@ animations = [ {
 "name": "drawer_open3",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 151 ) ],
+"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
 "loop": false,
-"name": "drawer_idle",
+"name": "drawer_open2",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
+"loop": false,
+"name": "drawer_eat",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 164 ), ExtResource( 168 ), ExtResource( 163 ) ],
+"loop": false,
+"name": "drawer_open1",
 "speed": 8.0
 } ]
 
@@ -1471,19 +1471,19 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ ExtResource( 131 ), ExtResource( 125 ), ExtResource( 147 ), ExtResource( 139 ), ExtResource( 123 ), ExtResource( 129 ), ExtResource( 128 ), ExtResource( 149 ) ],
+"frames": [ ExtResource( 120 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 117 ) ],
 "loop": true,
-"name": "mouse_outeat",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 145 ), ExtResource( 126 ), ExtResource( 132 ), ExtResource( 150 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 135 ), ExtResource( 127 ) ],
-"loop": true,
-"name": "mouse_in",
-"speed": 8.0
+"name": "mouse_angry",
+"speed": 5.0
 }, {
 "frames": [ null, ExtResource( 116 ), ExtResource( 144 ), ExtResource( 122 ), ExtResource( 136 ), ExtResource( 148 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 146 ), null ],
 "loop": true,
 "name": "mouse_outin",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 131 ), ExtResource( 125 ), ExtResource( 147 ), ExtResource( 139 ), ExtResource( 123 ), ExtResource( 129 ), ExtResource( 128 ), ExtResource( 149 ) ],
+"loop": true,
+"name": "mouse_outeat",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 114 ), ExtResource( 114 ), ExtResource( 111 ), ExtResource( 113 ), ExtResource( 112 ), ExtResource( 115 ) ],
@@ -1491,14 +1491,14 @@ animations = [ {
 "name": "mouse_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 120 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 117 ) ],
-"loop": true,
-"name": "mouse_angry",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 130 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 130 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 130 ), ExtResource( 143 ) ],
 "loop": true,
 "name": "mouse_eating",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 145 ), ExtResource( 126 ), ExtResource( 132 ), ExtResource( 150 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 135 ), ExtResource( 127 ) ],
+"loop": true,
+"name": "mouse_in",
 "speed": 8.0
 } ]
 
@@ -1802,11 +1802,6 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=75]
 animations = [ {
-"frames": [ ExtResource( 313 ) ],
-"loop": false,
-"name": "hen_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 317 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 318 ) ],
 "loop": true,
 "name": "hen_move",
@@ -1815,6 +1810,11 @@ animations = [ {
 "frames": [ ExtResource( 325 ), ExtResource( 321 ), ExtResource( 319 ), ExtResource( 332 ), ExtResource( 324 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 326 ), ExtResource( 322 ), ExtResource( 330 ), ExtResource( 327 ), ExtResource( 331 ), ExtResource( 328 ), ExtResource( 323 ) ],
 "loop": false,
 "name": "hen_spin",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 313 ) ],
+"loop": false,
+"name": "hen_idle",
 "speed": 8.0
 } ]
 
@@ -2064,11 +2064,6 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 9 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "gata_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 46 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 61 ) ],
 "loop": true,
 "name": "gata_awake",
@@ -2079,15 +2074,20 @@ animations = [ {
 "name": "gata_tail",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "gata_ear",
-"speed": 8.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "gata_empty",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 9 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "gata_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "gata_ear",
+"speed": 8.0
 } ]
 
 [sub_resource type="Animation" id=8]
@@ -2249,16 +2249,6 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=86]
 animations = [ {
-"frames": [ ExtResource( 341 ) ],
-"loop": true,
-"name": "window_idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 344 ), ExtResource( 342 ) ],
-"loop": true,
-"name": "window_open",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 342 ), ExtResource( 344 ) ],
 "loop": true,
 "name": "window_close",
@@ -2267,6 +2257,16 @@ animations = [ {
 "frames": [ ExtResource( 342 ) ],
 "loop": true,
 "name": "window_stillopen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 341 ) ],
+"loop": true,
+"name": "window_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 344 ), ExtResource( 342 ) ],
+"loop": true,
+"name": "window_open",
 "speed": 5.0
 } ]
 
@@ -2415,24 +2415,19 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=96]
 animations = [ {
-"frames": [ ExtResource( 356 ), ExtResource( 357 ), ExtResource( 359 ) ],
+"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
 "loop": true,
-"name": "bird_enters",
+"name": "bird_falls2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 354 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 363 ) ],
+"loop": true,
+"name": "bird_appears_love",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 360 ), ExtResource( 361 ), ExtResource( 366 ), ExtResource( 364 ) ],
+"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
 "loop": true,
-"name": "bird_enters_love",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 343 ) ],
-"loop": false,
-"name": "bird_appears",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
-"loop": true,
-"name": "bird_continues",
+"name": "bird_leaves",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 372 ) ],
@@ -2445,29 +2440,34 @@ animations = [ {
 "name": "bird_falls1",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 376 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 377 ), ExtResource( 389 ), ExtResource( 388 ), ExtResource( 385 ), ExtResource( 387 ), ExtResource( 386 ), ExtResource( 384 ) ],
-"loop": true,
-"name": "bird_falls3",
-"speed": 5.0
+"frames": [ ExtResource( 343 ) ],
+"loop": false,
+"name": "bird_appears",
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
+"frames": [ ExtResource( 360 ), ExtResource( 361 ), ExtResource( 366 ), ExtResource( 364 ) ],
 "loop": true,
-"name": "bird_falls2",
-"speed": 5.0
+"name": "bird_enters_love",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
 "loop": true,
 "name": "bird_passes",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
+"frames": [ ExtResource( 356 ), ExtResource( 357 ), ExtResource( 359 ) ],
 "loop": true,
-"name": "bird_leaves",
+"name": "bird_enters",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 354 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 363 ) ],
+"frames": [ ExtResource( 376 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 377 ), ExtResource( 389 ), ExtResource( 388 ), ExtResource( 385 ), ExtResource( 387 ), ExtResource( 386 ), ExtResource( 384 ) ],
 "loop": true,
-"name": "bird_appears_love",
+"name": "bird_falls3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
+"loop": true,
+"name": "bird_continues",
 "speed": 8.0
 } ]
 
@@ -2606,14 +2606,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=87]
 animations = [ {
-"frames": [ ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 350 ), ExtResource( 349 ) ],
-"loop": true,
-"name": "curtain_move",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 345 ) ],
 "loop": false,
 "name": "curtain_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 350 ), ExtResource( 349 ) ],
+"loop": true,
+"name": "curtain_move",
 "speed": 8.0
 } ]
 
@@ -2921,9 +2921,9 @@ __meta__ = {
 
 [node name="ButtonWin" type="Button" parent="."]
 margin_left = 448.0
-margin_top = -414.0
+margin_top = 1219.0
 margin_right = 744.0
-margin_bottom = -326.0
+margin_bottom = 1307.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
@@ -2933,9 +2933,9 @@ text = "Ganas"
 
 [node name="ButtonLose1" type="Button" parent="."]
 margin_left = 768.0
-margin_top = -414.0
+margin_top = 1219.0
 margin_right = 1064.0
-margin_bottom = -326.0
+margin_bottom = 1307.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
@@ -2945,9 +2945,9 @@ text = "Pierdes1"
 
 [node name="ButtonLose2" type="Button" parent="."]
 margin_left = 1088.0
-margin_top = -414.0
+margin_top = 1219.0
 margin_right = 1384.0
-margin_bottom = -326.0
+margin_bottom = 1307.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 2 )
@@ -3029,7 +3029,8 @@ position = Vector2( 839, 192 )
 
 [node name="SpriteChain" type="AnimatedSprite" parent="AreaChain"]
 frames = SubResource( 46 )
-animation = "chain_up"
+animation = "chain_idle"
+playing = true
 
 [node name="PlayerChain" type="AnimationPlayer" parent="AreaChain/SpriteChain"]
 autoplay = "chain_idle"
@@ -3174,7 +3175,7 @@ collision_layer = 16
 position = Vector2( 80, -6 )
 frames = SubResource( 6 )
 animation = "gata_idle"
-frame = 6
+frame = 1
 
 [node name="PlayerAudrey" type="AnimationPlayer" parent="AreaAudrey/SpriteAudrey"]
 reset_on_save = false
@@ -3215,10 +3216,10 @@ __meta__ = {
 }
 
 [node name="SpriteBird" type="AnimatedSprite" parent="."]
-position = Vector2( 1067, 570 )
+position = Vector2( 2827, 591 )
 frames = SubResource( 96 )
-animation = "bird_falls1"
-playing = true
+animation = "bird_falls3"
+frame = 1
 
 [node name="AreaFish" type="Area2D" parent="."]
 position = Vector2( 1641, 653 )
@@ -3298,11 +3299,10 @@ __meta__ = {
 }
 
 [node name="SpriteGatachasebird" type="AnimatedSprite" parent="."]
-position = Vector2( 899, 644 )
+position = Vector2( -805, 576 )
 frames = SubResource( 97 )
 animation = "gata_chasebird"
 frame = 1
-playing = true
 
 [connection signal="gui_input" from="CanvasLayer/ControlOutside" to="." method="_on_ControlOutside_gui_input"]
 [connection signal="pressed" from="ButtonWin" to="." method="_on_ButtonWin_pressed"]
