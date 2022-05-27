@@ -1,18 +1,18 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://IntroScene.gd" type="Script" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_5.png" type="Texture" id=5]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_3.png" type="Texture" id=6]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_6.png" type="Texture" id=7]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_7.png" type="Texture" id=8]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_1.png" type="Texture" id=9]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_2.png" type="Texture" id=10]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_4.png" type="Texture" id=11]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_8.png" type="Texture" id=12]
-[ext_resource path="res://assets/dora_intro_animation/intro_ani_9.png" type="Texture" id=13]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation05.png" type="Texture" id=5]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation06.png" type="Texture" id=6]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation07.png" type="Texture" id=7]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation01.png" type="Texture" id=8]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation08.png" type="Texture" id=9]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation09.png" type="Texture" id=10]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation03.png" type="Texture" id=11]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation04.png" type="Texture" id=12]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation00.png" type="Texture" id=13]
 [ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://screens/03_game_intro.png" type="Texture" id=15]
 [ext_resource path="res://actors/gata_animation/gata_idle_04.png" type="Texture" id=16]
@@ -56,13 +56,60 @@
 [ext_resource path="res://actors/fish_animation/fish_jump_10.png" type="Texture" id=54]
 [ext_resource path="res://actors/fish_animation/fish_jump_12.png" type="Texture" id=55]
 [ext_resource path="res://actors/fish_animation/fish_jump_02.png" type="Texture" id=56]
+[ext_resource path="res://assets/scratches_animation/scratches06.png" type="Texture" id=57]
+[ext_resource path="res://assets/scratches_animation/scratches09.png" type="Texture" id=58]
+[ext_resource path="res://assets/scratches_animation/scratches10.png" type="Texture" id=59]
+[ext_resource path="res://assets/scratches_animation/scratches07.png" type="Texture" id=60]
+[ext_resource path="res://assets/scratches_animation/scratches15.png" type="Texture" id=61]
+[ext_resource path="res://assets/scratches_animation/scratches12.png" type="Texture" id=62]
+[ext_resource path="res://assets/scratches_animation/scratches13.png" type="Texture" id=63]
+[ext_resource path="res://assets/scratches_animation/scratches18.png" type="Texture" id=64]
+[ext_resource path="res://assets/scratches_animation/scratches11.png" type="Texture" id=65]
+[ext_resource path="res://assets/scratches_animation/scratches20.png" type="Texture" id=66]
+[ext_resource path="res://assets/scratches_animation/scratches14.png" type="Texture" id=67]
+[ext_resource path="res://assets/layer_dirt.png" type="Texture" id=68]
+[ext_resource path="res://assets/scratches_animation/scratches16.png" type="Texture" id=69]
+[ext_resource path="res://assets/scratches_animation/scratches17.png" type="Texture" id=70]
+[ext_resource path="res://assets/scratches_animation/scratches19.png" type="Texture" id=71]
+[ext_resource path="res://assets/scratches_animation/scratches22.png" type="Texture" id=72]
+[ext_resource path="res://assets/scratches_animation/scratches23.png" type="Texture" id=73]
+[ext_resource path="res://assets/scratches_animation/scratches08.png" type="Texture" id=74]
+[ext_resource path="res://assets/scratches_animation/scratches21.png" type="Texture" id=75]
+[ext_resource path="res://assets/scratches_animation/scratches00.png" type="Texture" id=76]
+[ext_resource path="res://assets/scratches_animation/scratches01.png" type="Texture" id=77]
+[ext_resource path="res://assets/scratches_animation/scratches02.png" type="Texture" id=78]
+[ext_resource path="res://assets/scratches_animation/scratches03.png" type="Texture" id=79]
+[ext_resource path="res://assets/scratches_animation/scratches04.png" type="Texture" id=80]
+[ext_resource path="res://assets/scratches_animation/scratches05.png" type="Texture" id=81]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation02.png" type="Texture" id=82]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation19.png" type="Texture" id=83]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation27.png" type="Texture" id=84]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation17.png" type="Texture" id=85]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation14.png" type="Texture" id=86]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation10.png" type="Texture" id=87]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation12.png" type="Texture" id=88]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation18.png" type="Texture" id=89]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation21.png" type="Texture" id=90]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation23.png" type="Texture" id=91]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation26.png" type="Texture" id=92]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation11.png" type="Texture" id=93]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation24.png" type="Texture" id=94]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation13.png" type="Texture" id=95]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation16.png" type="Texture" id=96]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation15.png" type="Texture" id=97]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation22.png" type="Texture" id=98]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation28.png" type="Texture" id=99]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation20.png" type="Texture" id=100]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation29.png" type="Texture" id=101]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation30.png" type="Texture" id=102]
+[ext_resource path="res://assets/dora_intro_animation/dora_intro_animation25.png" type="Texture" id=103]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 8 ), ExtResource( 82 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 87 ), ExtResource( 93 ), ExtResource( 88 ), ExtResource( 95 ), ExtResource( 86 ), ExtResource( 97 ), ExtResource( 96 ), ExtResource( 85 ), ExtResource( 89 ), ExtResource( 83 ), ExtResource( 100 ), ExtResource( 90 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 94 ), ExtResource( 103 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 99 ), ExtResource( 101 ), ExtResource( 102 ) ],
 "loop": false,
 "name": "intro_ani",
-"speed": 2.5
+"speed": 8.0
 } ]
 
 [sub_resource type="DynamicFont" id=7]
@@ -147,11 +194,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
-"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "fish_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
 "loop": true,
 "name": "fish_bubbles",
@@ -161,6 +203,25 @@ animations = [ {
 "loop": true,
 "name": "fish_jump",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "fish_idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=65]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id=66]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 57 ), ExtResource( 60 ), ExtResource( 74 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 65 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 67 ), ExtResource( 61 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 64 ), ExtResource( 71 ), ExtResource( 66 ), ExtResource( 75 ), ExtResource( 72 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "scratches",
+"speed": 12.0
 } ]
 
 [node name="IntroScreen" type="Node2D"]
@@ -186,11 +247,9 @@ custom_styles/normal = ExtResource( 3 )
 text = "Empezar juego"
 
 [node name="IntroAniSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 480.25, 684 )
-scale = Vector2( 1.1685, 1.51788 )
+position = Vector2( 490, 611 )
 frames = SubResource( 2 )
 animation = "intro_ani"
-frame = 1
 
 [node name="IntroText" type="RichTextLabel" parent="."]
 margin_left = 442.0
@@ -230,14 +289,35 @@ texture = ExtResource( 17 )
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 4
+frame = 5
 playing = true
 
 [node name="SpriteFish" type="AnimatedSprite" parent="."]
 position = Vector2( 1641, 653 )
 frames = SubResource( 64 )
 animation = "fish_idle"
+frame = 1
 playing = true
+
+[node name="OverlayDirt" type="Sprite" parent="."]
+material = SubResource( 65 )
+position = Vector2( 960, 540 )
+texture = ExtResource( 68 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OverlayScratches" type="AnimatedSprite" parent="."]
+material = SubResource( 66 )
+position = Vector2( 960, 540 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "scratches"
+frame = 13
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="IntroAniSprite" to="." method="_on_IntroAniSprite_animation_finished"]

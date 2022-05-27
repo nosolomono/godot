@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
@@ -6,6 +6,31 @@
 [ext_resource path="res://Lose1Scene.gd" type="Script" id=4]
 [ext_resource path="res://screens/06_lose1b.png" type="Texture" id=5]
 [ext_resource path="res://screens/05_lose1a.png" type="Texture" id=6]
+[ext_resource path="res://assets/scratches_animation/scratches06.png" type="Texture" id=7]
+[ext_resource path="res://assets/scratches_animation/scratches09.png" type="Texture" id=8]
+[ext_resource path="res://assets/scratches_animation/scratches10.png" type="Texture" id=9]
+[ext_resource path="res://assets/scratches_animation/scratches07.png" type="Texture" id=10]
+[ext_resource path="res://assets/scratches_animation/scratches15.png" type="Texture" id=11]
+[ext_resource path="res://assets/scratches_animation/scratches12.png" type="Texture" id=12]
+[ext_resource path="res://assets/scratches_animation/scratches13.png" type="Texture" id=13]
+[ext_resource path="res://assets/scratches_animation/scratches18.png" type="Texture" id=14]
+[ext_resource path="res://assets/scratches_animation/scratches11.png" type="Texture" id=15]
+[ext_resource path="res://assets/scratches_animation/scratches20.png" type="Texture" id=16]
+[ext_resource path="res://assets/scratches_animation/scratches14.png" type="Texture" id=17]
+[ext_resource path="res://assets/layer_dirt.png" type="Texture" id=18]
+[ext_resource path="res://assets/scratches_animation/scratches16.png" type="Texture" id=19]
+[ext_resource path="res://assets/scratches_animation/scratches17.png" type="Texture" id=20]
+[ext_resource path="res://assets/scratches_animation/scratches19.png" type="Texture" id=21]
+[ext_resource path="res://assets/scratches_animation/scratches22.png" type="Texture" id=22]
+[ext_resource path="res://assets/scratches_animation/scratches23.png" type="Texture" id=23]
+[ext_resource path="res://assets/scratches_animation/scratches08.png" type="Texture" id=24]
+[ext_resource path="res://assets/scratches_animation/scratches21.png" type="Texture" id=25]
+[ext_resource path="res://assets/scratches_animation/scratches00.png" type="Texture" id=26]
+[ext_resource path="res://assets/scratches_animation/scratches01.png" type="Texture" id=27]
+[ext_resource path="res://assets/scratches_animation/scratches02.png" type="Texture" id=28]
+[ext_resource path="res://assets/scratches_animation/scratches03.png" type="Texture" id=29]
+[ext_resource path="res://assets/scratches_animation/scratches04.png" type="Texture" id=30]
+[ext_resource path="res://assets/scratches_animation/scratches05.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,6 +38,20 @@ animations = [ {
 "loop": false,
 "name": "lose1_scene_ani",
 "speed": 0.2
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=4]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "scratches",
+"speed": 12.0
 } ]
 
 [node name="Lose1Scene" type="Node2D"]
@@ -46,6 +85,26 @@ custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
 text = "Finalizar juego"
+
+[node name="OverlayDirt" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( 960, 540 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OverlayScratches" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 960, 540 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "scratches"
+frame = 5
+playing = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
 [connection signal="pressed" from="ButtonCredits" to="." method="_on_ButtonCredits_pressed"]
