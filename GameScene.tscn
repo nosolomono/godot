@@ -1,4 +1,4 @@
-[gd_scene load_steps=517 format=2]
+[gd_scene load_steps=526 format=2]
 
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
@@ -408,6 +408,7 @@
 [ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_04.png" type="Texture" id=406]
 [ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_12.png" type="Texture" id=407]
 [ext_resource path="res://assets/gata_chase_bird_animation/gata_bird_09.png" type="Texture" id=408]
+[ext_resource path="res://effects/shaders/blur.shader" type="Shader" id=409]
 [ext_resource path="res://assets/scratches_animation/scratches09.png" type="Texture" id=410]
 [ext_resource path="res://assets/scratches_animation/scratches10.png" type="Texture" id=411]
 [ext_resource path="res://assets/scratches_animation/scratches12.png" type="Texture" id=414]
@@ -429,9 +430,9 @@ animations = [ {
 "name": "dor_stillopen",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 333 ) ],
+"frames": [ ExtResource( 334 ), ExtResource( 339 ), ExtResource( 335 ) ],
 "loop": false,
-"name": "door_idle",
+"name": "door_open",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 337 ), ExtResource( 338 ), ExtResource( 340 ) ],
@@ -439,9 +440,9 @@ animations = [ {
 "name": "door_close",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 334 ), ExtResource( 339 ), ExtResource( 335 ) ],
+"frames": [ ExtResource( 333 ) ],
 "loop": false,
-"name": "door_open",
+"name": "door_idle",
 "speed": 8.0
 } ]
 
@@ -590,14 +591,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=45]
 animations = [ {
-"frames": [ ExtResource( 202 ), ExtResource( 204 ), ExtResource( 205 ), ExtResource( 206 ) ],
-"loop": false,
-"name": "fan_play",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 203 ) ],
 "loop": false,
 "name": "fan_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 202 ), ExtResource( 204 ), ExtResource( 205 ), ExtResource( 206 ) ],
+"loop": false,
+"name": "fan_play",
 "speed": 8.0
 } ]
 
@@ -689,14 +690,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ ExtResource( 255 ), ExtResource( 256 ), ExtResource( 262 ), ExtResource( 261 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ) ],
-"loop": true,
-"name": "screen_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 263 ) ],
 "loop": true,
 "name": "screen_stop",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 255 ), ExtResource( 256 ), ExtResource( 262 ), ExtResource( 261 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ) ],
+"loop": true,
+"name": "screen_idle",
 "speed": 8.0
 } ]
 
@@ -884,9 +885,9 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=46]
 animations = [ {
-"frames": [ ExtResource( 234 ), ExtResource( 233 ), ExtResource( 217 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 219 ), ExtResource( 208 ) ],
-"loop": true,
-"name": "chain_spin",
+"frames": [ ExtResource( 236 ), ExtResource( 235 ), ExtResource( 237 ) ],
+"loop": false,
+"name": "chain_down",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 223 ), ExtResource( 220 ), ExtResource( 222 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 211 ), ExtResource( 232 ), ExtResource( 229 ), ExtResource( 228 ), ExtResource( 231 ), ExtResource( 230 ), ExtResource( 209 ) ],
@@ -894,9 +895,9 @@ animations = [ {
 "name": "chain_bird",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 236 ), ExtResource( 235 ), ExtResource( 237 ) ],
+"frames": [ ExtResource( 207 ) ],
 "loop": false,
-"name": "chain_down",
+"name": "chain_idle",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 218 ), ExtResource( 210 ), ExtResource( 226 ) ],
@@ -904,9 +905,9 @@ animations = [ {
 "name": "chain_up",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 207 ) ],
-"loop": false,
-"name": "chain_idle",
+"frames": [ ExtResource( 234 ), ExtResource( 233 ), ExtResource( 217 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 219 ), ExtResource( 208 ) ],
+"loop": true,
+"name": "chain_spin",
 "speed": 8.0
 } ]
 
@@ -1257,16 +1258,6 @@ animations = [ {
 "name": "drawer_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
-"loop": false,
-"name": "drawer_eat",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
-"loop": false,
-"name": "drawer_open2",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 171 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 159 ) ],
 "loop": false,
 "name": "drawer_open3",
@@ -1277,9 +1268,19 @@ animations = [ {
 "name": "drawer_open1",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
+"loop": false,
+"name": "drawer_eat",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 153 ), ExtResource( 154 ), ExtResource( 155 ) ],
 "loop": false,
 "name": "drawer_close",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
+"loop": false,
+"name": "drawer_open2",
 "speed": 8.0
 } ]
 
@@ -1499,6 +1500,11 @@ animations = [ {
 "name": "mouse_idle",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 130 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 130 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 130 ), ExtResource( 143 ) ],
+"loop": true,
+"name": "mouse_eating",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 145 ), ExtResource( 126 ), ExtResource( 132 ), ExtResource( 150 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 135 ), ExtResource( 127 ) ],
 "loop": true,
 "name": "mouse_in",
@@ -1507,11 +1513,6 @@ animations = [ {
 "frames": [ null, ExtResource( 116 ), ExtResource( 144 ), ExtResource( 122 ), ExtResource( 136 ), ExtResource( 148 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 146 ), null ],
 "loop": true,
 "name": "mouse_outin",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 130 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 130 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 130 ), ExtResource( 143 ) ],
-"loop": true,
-"name": "mouse_eating",
 "speed": 8.0
 } ]
 
@@ -1815,6 +1816,11 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=75]
 animations = [ {
+"frames": [ ExtResource( 313 ) ],
+"loop": false,
+"name": "hen_idle",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 317 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 318 ) ],
 "loop": true,
 "name": "hen_move",
@@ -1823,11 +1829,6 @@ animations = [ {
 "frames": [ ExtResource( 325 ), ExtResource( 321 ), ExtResource( 319 ), ExtResource( 332 ), ExtResource( 324 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 326 ), ExtResource( 322 ), ExtResource( 330 ), ExtResource( 327 ), ExtResource( 331 ), ExtResource( 328 ), ExtResource( 323 ) ],
 "loop": false,
 "name": "hen_spin",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 313 ) ],
-"loop": false,
-"name": "hen_idle",
 "speed": 8.0
 } ]
 
@@ -1980,14 +1981,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ ExtResource( 81 ), ExtResource( 79 ), ExtResource( 83 ), ExtResource( 80 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 77 ), ExtResource( 78 ) ],
-"loop": true,
-"name": "dora_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 85 ) ],
 "loop": false,
 "name": "dora_awake",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 79 ), ExtResource( 83 ), ExtResource( 80 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "dora_idle",
 "speed": 8.0
 } ]
 
@@ -2082,24 +2083,24 @@ animations = [ {
 "name": "gata_idle",
 "speed": 8.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 46 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 61 ) ],
 "loop": true,
-"name": "gata_empty",
-"speed": 5.0
+"name": "gata_awake",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "gata_tail",
 "speed": 8.0
 }, {
+"frames": [  ],
+"loop": true,
+"name": "gata_empty",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 31 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "gata_ear",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 61 ) ],
-"loop": true,
-"name": "gata_awake",
 "speed": 8.0
 } ]
 
@@ -2262,24 +2263,24 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=86]
 animations = [ {
-"frames": [ ExtResource( 344 ), ExtResource( 342 ) ],
-"loop": true,
-"name": "window_open",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 342 ), ExtResource( 344 ) ],
-"loop": true,
-"name": "window_close",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 342 ) ],
 "loop": true,
 "name": "window_stillopen",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 344 ), ExtResource( 342 ) ],
+"loop": true,
+"name": "window_open",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 341 ) ],
 "loop": true,
 "name": "window_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 342 ), ExtResource( 344 ) ],
+"loop": true,
+"name": "window_close",
 "speed": 5.0
 } ]
 
@@ -2308,6 +2309,66 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ PoolVector2Array( -105, -224, -139, -23, -135, 128, -73, 194, -53, 193, -50, -86, -45, -233 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionPolygon2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -24, -8 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../AreaSpider/CollisionPolygon2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../CollisionPolygon2D:build_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../CollisionPolygon2D2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 108, 23 ) ]
 }
 
 [sub_resource type="Animation" id=88]
@@ -2338,6 +2399,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 1 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.125 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -20, 0 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=89]
 resource_name = "window_idle"
@@ -2367,6 +2440,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionPolygon2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 118, 23 ) ]
+}
 
 [sub_resource type="Animation" id=90]
 resource_name = "window_open"
@@ -2395,6 +2492,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.125 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -20, 0 ) ]
 }
 
 [sub_resource type="Animation" id=91]
@@ -2433,6 +2542,31 @@ animations = [ {
 "name": "bird_passes",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
+"loop": true,
+"name": "bird_continues",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
+"loop": true,
+"name": "bird_leaves",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 372 ) ],
+"loop": true,
+"name": "bird_empty",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
+"loop": true,
+"name": "bird_falls2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 343 ) ],
+"loop": false,
+"name": "bird_appears",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 378 ), ExtResource( 379 ), ExtResource( 380 ) ],
 "loop": true,
 "name": "bird_falls1",
@@ -2448,11 +2582,6 @@ animations = [ {
 "name": "bird_appears_love",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
-"loop": true,
-"name": "bird_leaves",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 360 ), ExtResource( 361 ), ExtResource( 366 ), ExtResource( 364 ) ],
 "loop": true,
 "name": "bird_enters_love",
@@ -2462,38 +2591,119 @@ animations = [ {
 "loop": true,
 "name": "bird_enters",
 "speed": 8.0
-}, {
-"frames": [ ExtResource( 372 ) ],
-"loop": true,
-"name": "bird_empty",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
-"loop": true,
-"name": "bird_continues",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
-"loop": true,
-"name": "bird_falls2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 343 ) ],
-"loop": false,
-"name": "bird_appears",
-"speed": 8.0
 } ]
+
+[sub_resource type="Animation" id=104]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "bird_appears" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=105]
+resource_name = "bird_appears"
+length = 0.125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "bird_appears" ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "bird_appears_love"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "bird_appears_love" ]
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "bird_enters"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "bird_enters" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 2 ]
+}
 
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
-"frames": [ ExtResource( 276 ), ExtResource( 273 ), ExtResource( 283 ), ExtResource( 267 ), ExtResource( 284 ), ExtResource( 282 ), ExtResource( 277 ), ExtResource( 272 ), ExtResource( 281 ) ],
-"loop": true,
-"name": "fish_bubbles",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 285 ), ExtResource( 290 ), ExtResource( 278 ), ExtResource( 268 ), ExtResource( 286 ), ExtResource( 287 ), ExtResource( 279 ), ExtResource( 269 ), ExtResource( 280 ), ExtResource( 288 ), ExtResource( 274 ), ExtResource( 289 ), ExtResource( 270 ), ExtResource( 271 ), ExtResource( 275 ) ],
 "loop": true,
 "name": "fish_jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 276 ), ExtResource( 273 ), ExtResource( 283 ), ExtResource( 267 ), ExtResource( 284 ), ExtResource( 282 ), ExtResource( 277 ), ExtResource( 272 ), ExtResource( 281 ) ],
+"loop": true,
+"name": "fish_bubbles",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 266 ), ExtResource( 264 ), ExtResource( 265 ) ],
@@ -2765,6 +2975,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=71]
 resource_name = "spider_down"
@@ -2793,6 +3015,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.625 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 30 ), Vector2( 0, 150 ) ]
 }
 
 [sub_resource type="Animation" id=70]
@@ -2824,6 +3058,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=72]
 resource_name = "spider_stilldown"
@@ -2854,6 +3100,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 180 ) ]
+}
 
 [sub_resource type="Animation" id=73]
 resource_name = "spider_up"
@@ -2882,6 +3140,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.625 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 150 ), Vector2( 0, 30 ) ]
 }
 
 [sub_resource type="SpriteFrames" id=7]
@@ -2918,6 +3188,104 @@ animations = [ {
 "name": "scratches",
 "speed": 12.0
 } ]
+
+[sub_resource type="ShaderMaterial" id=100]
+shader = ExtResource( 409 )
+shader_param/amount = 0.0
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.694118, 0.694118, 0.694118, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blur:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.5 ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.694118, 0.694118, 0.694118, 1 ), Color( 0.694118, 0.694118, 0.694118, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 2.5, 2.5 ]
+}
+
+[sub_resource type="Animation" id=103]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.694118, 0.694118, 0.694118, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.5, 0.0 ]
+}
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource( 3 )
@@ -3031,7 +3399,7 @@ anims/screen_idle = SubResource( 61 )
 anims/screen_stop = SubResource( 63 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaScreen"]
-polygon = PoolVector2Array( -8, -33, -152, -73, -202, -35, -188, 181, 68, 229, 252, 123, 248, 3, 190, -107, 128, -119 )
+polygon = PoolVector2Array( -23, -34, -78, -45, -134, -75, -206, -29, -196, 163, 9, 198, 48, 172, 123, 174, 229, 109, 230, 3, 176, -28, 159, -83, 92, -97, 50, -55 )
 
 [node name="AreaKeys" type="Area2D" parent="."]
 position = Vector2( 931, 525.5 )
@@ -3056,7 +3424,8 @@ position = Vector2( 839, 192 )
 
 [node name="SpriteChain" type="AnimatedSprite" parent="AreaChain"]
 frames = SubResource( 46 )
-animation = "chain_idle"
+animation = "chain_bird"
+frame = 5
 playing = true
 
 [node name="PlayerChain" type="AnimationPlayer" parent="AreaChain/SpriteChain"]
@@ -3179,6 +3548,7 @@ polygon = PoolVector2Array( -24, -28, -70, 0, -68, 49, -2, 79, 51, 41, 41, -64, 
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
+frame = 5
 playing = true
 
 [node name="SpriteDora" type="AnimatedSprite" parent="."]
@@ -3236,21 +3606,37 @@ anims/window_open = SubResource( 90 )
 anims/window_stillopen = SubResource( 91 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaWindow"]
-polygon = PoolVector2Array( -105, -224, -108, -187, -183, 118, -73, 194, -39, 204, -25, 226, 59, 262, 132, 246, 132, -266, 2, -245 )
+position = Vector2( -24, -8 )
+polygon = PoolVector2Array( -105, -224, -139, -23, -135, 128, -73, 194, -53, 193, -50, -86, -45, -233 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AreaWindow"]
+position = Vector2( 108, 23 )
+polygon = PoolVector2Array( -119, -259, -122, -55, -137, -48, -137, -25, -129, -19, -131, 208, -22, 218, 8, 208, 10, -53, -7, -253 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="SpriteBird" type="AnimatedSprite" parent="."]
-position = Vector2( 2827, 591 )
+position = Vector2( 1072, 586 )
 frames = SubResource( 96 )
-animation = "bird_falls3"
-frame = 1
+animation = "bird_enters"
+frame = 2
+
+[node name="PlayerBird" type="AnimationPlayer" parent="SpriteBird"]
+reset_on_save = false
+anims/RESET = SubResource( 104 )
+anims/bird_appears = SubResource( 105 )
+anims/bird_appears_love = SubResource( 106 )
+anims/bird_enters = SubResource( 107 )
 
 [node name="AreaFish" type="Area2D" parent="."]
 position = Vector2( 1641, 653 )
 
 [node name="SpriteFish" type="AnimatedSprite" parent="AreaFish"]
+position = Vector2( 4, 4 )
 frames = SubResource( 64 )
 animation = "fish_bubbles"
 
@@ -3263,7 +3649,9 @@ anims/fish_idle = SubResource( 66 )
 anims/fish_jump = SubResource( 65 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaFish"]
-polygon = PoolVector2Array( -87, -46, -145, 46, -119, 122, -15, 164, 55, 142, 137, 82, 111, 0, 67, -58, -21, -68 )
+position = Vector2( -2.99997, 17 )
+scale = Vector2( 0.844643, 0.8125 )
+polygon = PoolVector2Array( -43, 0, -76, 25, -90, 63, -76, 103, -21, 122, 51, 118, 85, 77, 83, 33, 40, -2 )
 
 [node name="SpriteCurtain" type="AnimatedSprite" parent="."]
 position = Vector2( 1731, 375 )
@@ -3284,8 +3672,11 @@ position = Vector2( 1718, 183 )
 
 [node name="SpriteSpider" type="AnimatedSprite" parent="AreaSpider"]
 frames = SubResource( 69 )
-animation = "spider_idle"
-frame = 15
+animation = "spider_down"
+frame = 4
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerSpider" type="AnimationPlayer" parent="AreaSpider/SpriteSpider"]
 autoplay = "spider_idle"
@@ -3297,7 +3688,7 @@ anims/spider_stilldown = SubResource( 72 )
 anims/spider_up = SubResource( 73 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaSpider"]
-polygon = PoolVector2Array( -26, -156, -64, -102, -36, -60, -41, 115, 37, 116, 41, -60, 155, -89, 240, -166, 186, -206, -5, -207 )
+polygon = PoolVector2Array( -13, -104, -19, -72, 10, -64, 19, -99, 6, -115 )
 
 [node name="Armchair" type="Sprite" parent="."]
 position = Vector2( 356.5, 800 )
@@ -3325,10 +3716,13 @@ __meta__ = {
 }
 
 [node name="SpriteGatachasebird" type="AnimatedSprite" parent="."]
-position = Vector2( -805, 576 )
+position = Vector2( 914, 712 )
 frames = SubResource( 97 )
 animation = "gata_chasebird"
 frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="OverlayDirt" type="Sprite" parent="."]
 material = SubResource( 4 )
@@ -3344,13 +3738,38 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 4
 playing = true
 flip_h = true
 flip_v = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="OverlayBlurDark" type="Node2D" parent="."]
+process_priority = -9999
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Blur" type="ColorRect" parent="OverlayBlurDark"]
+material = SubResource( 100 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Dark" type="CanvasModulate" parent="OverlayBlurDark"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedOverlay" type="AnimationPlayer" parent="OverlayBlurDark"]
+reset_on_save = false
+anims/RESET = SubResource( 101 )
+anims/fade_in = SubResource( 102 )
+anims/fade_out = SubResource( 103 )
 
 [connection signal="gui_input" from="CanvasLayer/ControlOutside" to="." method="_on_ControlOutside_gui_input"]
 [connection signal="pressed" from="ButtonWin" to="." method="_on_ButtonWin_pressed"]

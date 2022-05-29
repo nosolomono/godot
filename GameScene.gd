@@ -36,8 +36,11 @@ onready var _area_window = $AreaWindow
 onready var _player_window = get_node("AreaWindow/SpriteWindow/PlayerWindow")
 onready var _sprite_curtain = $SpriteCurtain
 onready var _player_curtain = get_node("SpriteCurtain/PlayerCurtain")
+onready var _animated_overlay = get_node("OverlayBlurDark/AnimatedOverlay")
 
 func _ready():
+	
+	_animated_overlay.play("fade_out")
 	# pass
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_player_audrey.play("gata_idle")

@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://effects/shaders/blur.shader" type="Shader" id=1]
+[ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="ShaderMaterial" id=100]
+shader = ExtResource( 1 )
+shader_param/amount = 0.0
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.694118, 0.694118, 0.694118, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blur:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.5 ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.568627, 0.568627, 0.568627, 1 ), Color( 0.568627, 0.568627, 0.568627, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 2.5, 2.5 ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 44
+outline_size = 7
+outline_color = Color( 0.203922, 0.196078, 0.196078, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Blur" type="Node2D"]
+
+[node name="OverlayBlurDark" type="Control" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="Blur" type="ColorRect" parent="OverlayBlurDark"]
+material = SubResource( 100 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="Dark" type="CanvasModulate" parent="OverlayBlurDark"]
+
+[node name="AnimatedOverlay" type="AnimationPlayer" parent="OverlayBlurDark"]
+reset_on_save = false
+anims/RESET = SubResource( 101 )
+anims/fade_in = SubResource( 102 )
+
+[node name="IntroText" type="RichTextLabel" parent="."]
+margin_left = 442.0
+margin_top = 501.0
+margin_right = 1491.0
+margin_bottom = 711.0
+rect_pivot_offset = Vector2( 1525, -335 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center]¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa![/center]"
+visible_characters = 0
+percent_visible = 0.0
+text = "¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa!"
+override_selected_font_color = true

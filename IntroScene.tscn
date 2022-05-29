@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://IntroScene.gd" type="Script" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
@@ -103,6 +103,7 @@
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation29.png" type="Texture" id=101]
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation30.png" type="Texture" id=102]
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation25.png" type="Texture" id=103]
+[ext_resource path="res://effects/shaders/blur.shader" type="Shader" id=104]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -111,13 +112,6 @@ animations = [ {
 "name": "intro_ani",
 "speed": 8.0
 } ]
-
-[sub_resource type="DynamicFont" id=7]
-size = 44
-outline_size = 7
-outline_color = Color( 0.203922, 0.196078, 0.196078, 1 )
-use_filter = true
-font_data = ExtResource( 14 )
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -194,14 +188,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "fish_bubbles",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
 "loop": true,
 "name": "fish_jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "fish_bubbles",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
@@ -223,6 +217,111 @@ animations = [ {
 "name": "scratches",
 "speed": 12.0
 } ]
+
+[sub_resource type="ShaderMaterial" id=100]
+shader = ExtResource( 104 )
+shader_param/amount = 2.5
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.694118, 0.694118, 0.694118, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blur:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.5 ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.694118, 0.694118, 0.694118, 1 ), Color( 0.694118, 0.694118, 0.694118, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.8, 4.1, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 2.5, 2.5 ]
+}
+
+[sub_resource type="Animation" id=103]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dark:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.694118, 0.694118, 0.694118, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:material:shader_param/amount")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.5, 0.0 ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+size = 44
+outline_size = 7
+outline_color = Color( 0.203922, 0.196078, 0.196078, 1 )
+use_filter = true
+font_data = ExtResource( 14 )
 
 [node name="IntroScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -251,25 +350,6 @@ position = Vector2( 490, 611 )
 frames = SubResource( 2 )
 animation = "intro_ani"
 
-[node name="IntroText" type="RichTextLabel" parent="."]
-margin_left = 442.0
-margin_top = 501.0
-margin_right = 1491.0
-margin_bottom = 711.0
-rect_pivot_offset = Vector2( 1525, -335 )
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_fonts/normal_font = SubResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center]¡Consigue que la gatita Audrey destroce
-el abrigo rojo sin despertar a su dueña
-y obtindràs tu recompensa![/center]"
-visible_characters = 0
-percent_visible = 0.0
-text = "¡Consigue que la gatita Audrey destroce
-el abrigo rojo sin despertar a su dueña
-y obtindràs tu recompensa!"
-override_selected_font_color = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
 anims/intro_text_ani = SubResource( 5 )
@@ -289,7 +369,7 @@ texture = ExtResource( 17 )
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 5
+frame = 7
 playing = true
 
 [node name="SpriteFish" type="AnimatedSprite" parent="."]
@@ -313,11 +393,45 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 13
+frame = 4
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="OverlayBlurDark" type="Node2D" parent="."]
+
+[node name="Blur" type="ColorRect" parent="OverlayBlurDark"]
+material = SubResource( 100 )
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="Dark" type="CanvasModulate" parent="OverlayBlurDark"]
+
+[node name="AnimatedOverlay" type="AnimationPlayer" parent="OverlayBlurDark"]
+reset_on_save = false
+anims/RESET = SubResource( 101 )
+anims/fade_in = SubResource( 102 )
+anims/fade_out = SubResource( 103 )
+
+[node name="IntroText" type="RichTextLabel" parent="."]
+margin_left = 442.0
+margin_top = 442.0
+margin_right = 1491.0
+margin_bottom = 711.0
+rect_pivot_offset = Vector2( 1525, -335 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center]¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa![/center]"
+visible_characters = 0
+percent_visible = 0.0
+text = "¡Consigue que la gatita Audrey destroce
+el abrigo rojo sin despertar a su dueña
+y obtindràs tu recompensa!"
+override_selected_font_color = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="IntroAniSprite" to="." method="_on_IntroAniSprite_animation_finished"]
