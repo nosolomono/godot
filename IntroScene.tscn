@@ -1,9 +1,6 @@
-[gd_scene load_steps=119 format=2]
+[gd_scene load_steps=116 format=2]
 
 [ext_resource path="res://IntroScene.gd" type="Script" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
-[ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation05.png" type="Texture" id=5]
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation06.png" type="Texture" id=6]
 [ext_resource path="res://assets/dora_intro_animation/dora_intro_animation07.png" type="Texture" id=7]
@@ -188,14 +185,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
-"frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "fish_jump",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
 "loop": true,
 "name": "fish_bubbles",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "fish_jump",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
@@ -333,18 +330,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Button" type="Button" parent="."]
-visible = false
-margin_left = 558.0
-margin_top = 1136.0
-margin_right = 1362.0
-margin_bottom = 1352.0
-custom_fonts/font = ExtResource( 4 )
-custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
-text = "Empezar juego"
-
 [node name="IntroAniSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 490, 611 )
 frames = SubResource( 2 )
@@ -369,14 +354,14 @@ texture = ExtResource( 17 )
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 7
+frame = 5
 playing = true
 
 [node name="SpriteFish" type="AnimatedSprite" parent="."]
 position = Vector2( 1641, 653 )
 frames = SubResource( 64 )
 animation = "fish_idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="OverlayDirt" type="Sprite" parent="."]
@@ -393,7 +378,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 4
+frame = 13
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -433,5 +418,12 @@ el abrigo rojo sin despertar a su dueña
 y obtindràs tu recompensa!"
 override_selected_font_color = true
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="ButtonContinue" type="Button" parent="."]
+show_behind_parent = true
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 1942.0
+margin_bottom = 1100.0
+
 [connection signal="animation_finished" from="IntroAniSprite" to="." method="_on_IntroAniSprite_animation_finished"]
+[connection signal="pressed" from="ButtonContinue" to="." method="_on_ButtonContinue_pressed"]

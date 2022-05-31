@@ -4,6 +4,7 @@ onready var _animated_sprite = $IntroAniSprite
 onready var _rich_text_label = $IntroText
 onready var _animation_player = $AnimationPlayer
 onready var _animated_overlay = get_node("OverlayBlurDark/AnimatedOverlay")
+onready var _area_clickable = $AreaClickable
 
 func _ready():
 	# pass
@@ -22,8 +23,8 @@ func IntroTextAniEnded():
 	# print("animation finished!")
 	Global.goto_scene("res://GameScene.tscn")
 
-# func _on_Button_pressed():
-	# Global.goto_scene("res://GameScene.tscn")
+func _on_ButtonContinue_pressed():
+	Global.goto_scene("res://GameScene.tscn")
 
 
 
