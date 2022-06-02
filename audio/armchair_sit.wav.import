@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/armchair_sit.wav-3672eb0db4b0f24847d4e95d691831b3.sample"
+
+[deps]
+
+source_file="res://audio/armchair_sit.wav"
+dest_files=[ "res://.import/armchair_sit.wav-3672eb0db4b0f24847d4e95d691831b3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

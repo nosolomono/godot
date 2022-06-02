@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hen_squeak.wav-f1096fa84057033f92d974155c9a4a09.sample"
+
+[deps]
+
+source_file="res://audio/hen_squeak.wav"
+dest_files=[ "res://.import/hen_squeak.wav-f1096fa84057033f92d974155c9a4a09.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

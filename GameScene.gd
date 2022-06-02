@@ -6,6 +6,7 @@ var cursor_hand = load("res://assets/pointer_hand.png")
 onready var _cursor_sprite = $CursorSprite
 onready var _area_audrey = $AreaAudrey
 onready var _player_audrey = get_node("AreaAudrey/SpriteAudrey/PlayerAudrey")
+onready var _audio_audrey = get_node("AreaAudrey/SpriteAudrey/AudioAudrey")
 onready var _sprite_dora = $SpriteDora
 onready var _player_dora = get_node("SpriteDora/PlayerDora")
 onready var _area_metronome = $AreaMetronome
@@ -41,13 +42,13 @@ onready var _player_curtain = get_node("SpriteCurtain/PlayerCurtain")
 onready var _animated_overlay = get_node("OverlayBlurDark/AnimatedOverlay")
 onready var _sprite_bird = $SpriteBird
 onready var _player_bird = get_node("SpriteBird/PlayerBird")
+onready var _player_bird_song = get_node("SpriteBird/PlayerBirdSong")
 onready var _sprite_pendulum = $SpritePendulum
 onready var _player_pendulum = get_node("SpritePendulum/PlayerPendulum")
 onready var _sprite_hanger = $SpriteHanger
 onready var _sprite_coat = $SpriteCoat
 onready var _sprite_dishes = $SpriteDishes
 
-onready var _sprite_ending_08c = $SpriteEnding08c
 onready var _player_ending_01 = get_node("SpriteEnding01/PlayerEnding01")
 onready var _player_ending_02 = get_node("SpriteEnding02/PlayerEnding02")
 onready var _player_ending_03 = get_node("SpriteEnding03/PlayerEnding03")
@@ -55,6 +56,7 @@ onready var _player_ending_04 = get_node("SpriteEnding04/PlayerEnding04")
 onready var _player_ending_05 = get_node("SpriteEnding05/PlayerEnding05")
 onready var _player_ending_06 = get_node("SpriteEnding06/PlayerEnding06")
 onready var _player_ending_07 = get_node("SpriteEnding07/PlayerEnding07")
+onready var _player_ending_08c = get_node("SpriteEnding08c/PlayerEnding08c")
 
 onready var _ending_text = ""
 
@@ -98,6 +100,8 @@ var _disable_click = false
 var _bird_flying = false
 var _bird_clock = false
 var _mouse_eating = false
+var _game_over = false
+var _bird_on_coat = false
 
 func _process(delta):
 	if _actor_hover == true and _disable_click == false:
@@ -109,9 +113,13 @@ func _process(delta):
 	elif _disable_click == true:
 		_cursor_sprite.play("hidden")
 
-	if _dora_awake == true:
+	if _dora_awake == true and _game_over == false:
 		_player_dora.play("dora_awake")
 		_sprite_dora.modulate = Color("#ff4d4d")
+		_game_over = true
+	
+	if _game_over == true:
+		pass
 
 	"""
 	if _bird_falling_position == 1:
@@ -287,6 +295,7 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 
 				_player_ending_02.play("animate")
 				_area_audrey.visible = false
+				_player_audrey.stop()
 				_area_mouse.visible = false
 				_sprite_dishes.visible = false
 				_disable_click = true
@@ -298,6 +307,7 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				
 				_player_ending_07.play("animate")
 				_area_audrey.visible = false
+				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
 				
@@ -308,8 +318,20 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_ending_06.play("animate")
 				_cuckoo_stop = false
 				_area_audrey.visible = false
+				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				
+			
+			if _bird_on_coat == true:
+				
+				""" # ENDING 08c (repeated) """
+				_player_audrey.play("gata_empty")
+				_player_bird.play("bird_stuck")
+				_player_ending_08c.play("animate")
+				_disable_click = true
+				_ending_text = ""
+				
 				
 	else:
 		_audrey_random_ani = 1
@@ -395,6 +417,7 @@ func _on_PlayerMouse_animation_finished(anim_name):
 
 		_player_ending_02.play("animate")
 		_area_audrey.visible = false
+		_player_audrey.stop()
 		_area_mouse.visible = false
 		_sprite_dishes.visible = false
 		_disable_click = true
@@ -419,6 +442,7 @@ func _on_PlayerMouse_animation_started(anim_name):
 
 		_player_ending_02.play("animate")
 		_area_audrey.visible = false
+		_player_audrey.stop()
 		_area_mouse.visible = false
 		_sprite_dishes.visible = false
 		_disable_click = true
@@ -485,7 +509,6 @@ func _on_AreaCuckoo_input_event(viewport, event, shape_idx):
 			
 			if _bird_last_animation == "bird_empty":
 				_player_bird.play("bird_appears")
-				
 
 		elif _cuckoo_stop == true:
 			_player_cuckoo.play("cuckoo_in")
@@ -637,6 +660,7 @@ func _on_PlayerFish_animation_finished(anim_name):
 		_player_ending_03.play("animate")
 		_area_fish.visible = false
 		_area_audrey.visible = false
+		_player_audrey.stop()
 		_disable_click = true
 		_ending_text = "¡Oh no!, has matado a Don Burbujas…"
 		
@@ -682,6 +706,7 @@ func _on_PlayerSpider_animation_started(anim_name):
 				
 				_player_ending_04.play("animate")
 				_area_audrey.visible = false
+				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
 				
@@ -692,6 +717,7 @@ func _on_PlayerSpider_animation_started(anim_name):
 				
 				_player_ending_05.play("animate")
 				_area_audrey.visible = false
+				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Pero que bestia eres, ¡Te has cargado a Audrey!"
 				
@@ -907,6 +933,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_appears_love")
+			_player_bird_song.play("bird_song")
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
@@ -939,6 +966,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_enters_love")
+			_player_bird_song.play("bird_song")
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
@@ -956,6 +984,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_enters_love")
+			_player_bird_song.play("bird_song")
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
@@ -973,6 +1002,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_appears_love")
+			_player_bird_song.play("bird_song")
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
@@ -1028,6 +1058,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_enters_love")
+			_player_bird_song.play("bird_song")
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
@@ -1041,29 +1072,34 @@ func _on_PlayerBird_animation_finished(anim_name):
 		print("bird last anim: ", _bird_last_animation)
 			
 	""" # ENDING 08a """
-	if anim_name == "bird_falls2":		
-		_dora_awake = true;
+	if anim_name == "bird_falls2":
+		_dora_awake = true
 		_player_audrey.play("gata_aware_left")
-		_player_bird.play("bird_stuck")
+		# _player_bird.play("bird_stuck")
 		_disable_click = true
 		_ending_text = "Pobrecita Audrey, si ella no hecho nada…"
 		
 	""" # ENDING 08b """
-	if anim_name == "bird_falls3":		
-		_dora_awake = true;
+	if anim_name == "bird_falls3":
+		_dora_awake = true
 		_player_screen.play("screen_burnt")
 		_player_audrey.play("gata_aware_right")
-		_player_bird.play("bird_stuck")
+		# _player_bird.play("bird_stuck")
 		_disable_click = true
 		_ending_text = "Pobrecita Audrey, si ella no hecho nada…"
 		
 	""" # ENDING 08c """
-	if anim_name == "bird_falls1":		
-		_sprite_ending_08c.play("animate")
-		_player_audrey.play("gata_empty")
-		_player_bird.play("bird_stuck")
-		_disable_click = true
-		_ending_text = ""
+	if anim_name == "bird_falls1":
+		
+		if _gata_awake == false:
+			_bird_on_coat = true
+			
+		else:
+			_player_audrey.play("gata_empty")
+			_player_bird.play("bird_stuck")
+			_player_ending_08c.play("animate")
+			_disable_click = true
+			_ending_text = ""
 		
 			
 	"""	

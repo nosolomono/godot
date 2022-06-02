@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bird_wings.wav-b970aba93d0d6d564ce937bd8ad8f6ab.sample"
+
+[deps]
+
+source_file="res://audio/bird_wings.wav"
+dest_files=[ "res://.import/bird_wings.wav-b970aba93d0d6d564ce937bd8ad8f6ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

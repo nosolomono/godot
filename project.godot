@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Global.gd"
+GameMusic="*res://GameMusic.tscn"
 
 [display]
 

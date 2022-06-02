@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spider_down.wav-9df71c5e9a05949a1ffbdc02c6e6a2e8.sample"
+
+[deps]
+
+source_file="res://audio/spider_down.wav"
+dest_files=[ "res://.import/spider_down.wav-9df71c5e9a05949a1ffbdc02c6e6a2e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

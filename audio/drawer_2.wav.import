@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drawer_2.wav-01136e65bf0195d75c5bd360f3bcfb9c.sample"
+
+[deps]
+
+source_file="res://audio/drawer_2.wav"
+dest_files=[ "res://.import/drawer_2.wav-01136e65bf0195d75c5bd360f3bcfb9c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

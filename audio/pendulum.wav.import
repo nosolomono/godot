@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pendulum.wav-0b0e2c5338a6a6006ef1c48238b3f099.sample"
+
+[deps]
+
+source_file="res://audio/pendulum.wav"
+dest_files=[ "res://.import/pendulum.wav-0b0e2c5338a6a6006ef1c48238b3f099.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

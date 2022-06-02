@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cuckoo_in.wav-12ce7957b6d4f22e3958a90693541298.sample"
+
+[deps]
+
+source_file="res://audio/cuckoo_in.wav"
+dest_files=[ "res://.import/cuckoo_in.wav-12ce7957b6d4f22e3958a90693541298.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
