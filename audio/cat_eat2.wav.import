@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat_eat2.wav-66581d5eae37d9a7d7f86d7d63111d87.sample"
+
+[deps]
+
+source_file="res://audio/cat_eat2.wav"
+dest_files=[ "res://.import/cat_eat2.wav-66581d5eae37d9a7d7f86d7d63111d87.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

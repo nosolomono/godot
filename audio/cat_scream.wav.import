@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat_scream.wav-b722d54391568bc90f7a993eef87c84c.sample"
+
+[deps]
+
+source_file="res://audio/cat_scream.wav"
+dest_files=[ "res://.import/cat_scream.wav-b722d54391568bc90f7a993eef87c84c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

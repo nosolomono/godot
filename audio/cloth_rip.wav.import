@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cloth_rip.wav-357966c45f3093ef39ffd69175feb0ae.sample"
+
+[deps]
+
+source_file="res://audio/cloth_rip.wav"
+dest_files=[ "res://.import/cloth_rip.wav-357966c45f3093ef39ffd69175feb0ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

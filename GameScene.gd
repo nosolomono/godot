@@ -102,6 +102,7 @@ var _bird_clock = false
 var _mouse_eating = false
 var _game_over = false
 var _bird_on_coat = false
+var _spider_down = false
 
 func _process(delta):
 	if _actor_hover == true and _disable_click == false:
@@ -115,7 +116,7 @@ func _process(delta):
 
 	if _dora_awake == true and _game_over == false:
 		_player_dora.play("dora_awake")
-		_sprite_dora.modulate = Color("#ff4d4d")
+		# _sprite_dora.modulate = Color("#ff4d4d")
 		_game_over = true
 	
 	if _game_over == true:
@@ -332,6 +333,25 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_disable_click = true
 				_ending_text = ""
 				
+			if _window_open == false and _spider_down == true:
+					
+				""" # ENDING 04 (repeated) """
+				
+				_player_ending_04.play("animate")
+				_area_audrey.visible = false
+				_player_audrey.stop()
+				_disable_click = true
+				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				
+			if _window_open == true and _spider_down == true:
+				
+				""" # ENDING 05 (repeated) """
+				
+				_player_ending_05.play("animate")
+				_area_audrey.visible = false
+				_player_audrey.stop()
+				_disable_click = true
+				_ending_text = "Pero que bestia eres, ¡Te has cargado a Audrey!"
 				
 	else:
 		_audrey_random_ani = 1
@@ -679,7 +699,6 @@ func _on_PlayerEnding03_animation_finished(anim_name):
 Spider
 """
 var _spider_last_animation = "spider_idle"
-var _spider_down = false
 
 func _on_AreaSpider_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
@@ -687,10 +706,12 @@ func _on_AreaSpider_input_event(viewport, event, shape_idx):
 		if _spider_last_animation == "spider_idle":
 			_player_spider.play("spider_down")
 			_spider_last_animation = _player_spider.current_animation
+			_spider_down = true
 
 		if _spider_last_animation == "spider_stilldown":
 			_player_spider.play("spider_up")
 			_spider_last_animation = _player_spider.current_animation
+			_spider_down = false
 
 
 func _on_PlayerSpider_animation_started(anim_name):

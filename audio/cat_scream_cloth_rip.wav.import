@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cat_scream_cloth_rip.wav-8837de1e4bba9f141cc25cbaae80d2ce.sample"
+
+[deps]
+
+source_file="res://audio/cat_scream_cloth_rip.wav"
+dest_files=[ "res://.import/cat_scream_cloth_rip.wav-8837de1e4bba9f141cc25cbaae80d2ce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=772 format=2]
+[gd_scene load_steps=781 format=2]
 
 [ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=1]
 [ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
@@ -584,6 +584,7 @@
 [ext_resource path="res://assets/endings_animations/ending_02_cat_cupboard/ending_02_cat_cupboard24.png" type="Texture" id=582]
 [ext_resource path="res://assets/endings_animations/ending_02_cat_cupboard/ending_02_cat_cupboard23.png" type="Texture" id=583]
 [ext_resource path="res://assets/endings_animations/ending_02_cat_cupboard/ending_02_cat_cupboard25.png" type="Texture" id=584]
+[ext_resource path="res://audio/cloth_rip.wav" type="AudioStream" id=585]
 [ext_resource path="res://audio/metronome.wav" type="AudioStream" id=586]
 [ext_resource path="res://audio/pendulum.wav" type="AudioStream" id=587]
 [ext_resource path="res://audio/screen.wav" type="AudioStream" id=588]
@@ -612,13 +613,21 @@
 [ext_resource path="res://audio/ending_hanger.wav" type="AudioStream" id=611]
 [ext_resource path="res://audio/hanger_spinning.wav" type="AudioStream" id=612]
 [ext_resource path="res://audio/cat_burp.wav" type="AudioStream" id=613]
-[ext_resource path="res://audio/cat_eat.wav" type="AudioStream" id=614]
+[ext_resource path="res://audio/cat_eat2.wav" type="AudioStream" id=614]
 [ext_resource path="res://audio/drawer_1.wav" type="AudioStream" id=615]
 [ext_resource path="res://audio/drawer_3.wav" type="AudioStream" id=616]
 [ext_resource path="res://audio/window_close.wav" type="AudioStream" id=617]
 [ext_resource path="res://audio/window_open.wav" type="AudioStream" id=618]
 [ext_resource path="res://audio/door_open.wav" type="AudioStream" id=619]
 [ext_resource path="res://audio/door_close.wav" type="AudioStream" id=620]
+[ext_resource path="res://audio/ending_fish.wav" type="AudioStream" id=621]
+[ext_resource path="res://audio/cat_scream_cloth_rip.wav" type="AudioStream" id=622]
+[ext_resource path="res://audio/ending_window.wav" type="AudioStream" id=623]
+[ext_resource path="res://audio/mouse1.wav" type="AudioStream" id=624]
+[ext_resource path="res://audio/mouse2.wav" type="AudioStream" id=625]
+[ext_resource path="res://audio/ending_mouse.wav" type="AudioStream" id=626]
+[ext_resource path="res://audio/armchair_sit.wav" type="AudioStream" id=627]
+[ext_resource path="res://audio/ending_piano_edited.wav" type="AudioStream" id=628]
 
 [sub_resource type="SpriteFrames" id=80]
 animations = [ {
@@ -627,14 +636,14 @@ animations = [ {
 "name": "dor_stillopen",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 334 ), ExtResource( 339 ), ExtResource( 335 ) ],
-"loop": false,
-"name": "door_open",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 333 ) ],
 "loop": false,
 "name": "door_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 334 ), ExtResource( 339 ), ExtResource( 335 ) ],
+"loop": false,
+"name": "door_open",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 337 ), ExtResource( 338 ), ExtResource( 340 ) ],
@@ -1184,16 +1193,6 @@ animations = [ {
 "name": "chain_bird",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 236 ), ExtResource( 235 ), ExtResource( 237 ) ],
-"loop": false,
-"name": "chain_down",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 207 ) ],
-"loop": false,
-"name": "chain_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 218 ), ExtResource( 210 ), ExtResource( 226 ) ],
 "loop": false,
 "name": "chain_up",
@@ -1202,6 +1201,16 @@ animations = [ {
 "frames": [ ExtResource( 234 ), ExtResource( 233 ), ExtResource( 217 ), ExtResource( 225 ), ExtResource( 221 ), ExtResource( 212 ), ExtResource( 213 ), ExtResource( 214 ), ExtResource( 215 ), ExtResource( 216 ), ExtResource( 219 ), ExtResource( 208 ) ],
 "loop": true,
 "name": "chain_spin",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 236 ), ExtResource( 235 ), ExtResource( 237 ) ],
+"loop": false,
+"name": "chain_down",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 207 ) ],
+"loop": false,
+"name": "chain_idle",
 "speed": 8.0
 } ]
 
@@ -1443,25 +1452,25 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=39]
 animations = [ {
-"frames": [ ExtResource( 193 ), ExtResource( 185 ), ExtResource( 175 ), ExtResource( 178 ), ExtResource( 199 ), ExtResource( 188 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 174 ) ],
-"loop": true,
-"name": "cuckoo_in",
-"speed": 5.0
+"frames": [ ExtResource( 180 ) ],
+"loop": false,
+"name": "cuckoo_still",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 174 ) ],
 "loop": false,
 "name": "cuckoo_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 180 ) ],
-"loop": false,
-"name": "cuckoo_still",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 191 ), ExtResource( 192 ), ExtResource( 179 ), ExtResource( 186 ), ExtResource( 198 ), ExtResource( 184 ), ExtResource( 183 ), ExtResource( 197 ), ExtResource( 200 ), ExtResource( 190 ), ExtResource( 187 ), ExtResource( 195 ), ExtResource( 181 ), ExtResource( 196 ), ExtResource( 189 ), ExtResource( 180 ), ExtResource( 172 ), ExtResource( 177 ), ExtResource( 176 ), ExtResource( 182 ) ],
 "loop": false,
 "name": "cuckoo_out",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 193 ), ExtResource( 185 ), ExtResource( 175 ), ExtResource( 178 ), ExtResource( 199 ), ExtResource( 188 ), ExtResource( 173 ), ExtResource( 174 ), ExtResource( 174 ) ],
+"loop": true,
+"name": "cuckoo_in",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=44]
@@ -1608,7 +1617,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=43]
 resource_name = "cuckoo_still"
-length = 0.75
+length = 0.125
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath("AreaCuckoo/SpriteCuckoo:animation")
@@ -1637,14 +1646,9 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=31]
 animations = [ {
-"frames": [ ExtResource( 151 ) ],
+"frames": [ ExtResource( 171 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 159 ) ],
 "loop": false,
-"name": "drawer_idle",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
-"loop": false,
-"name": "drawer_open2",
+"name": "drawer_open3",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 153 ), ExtResource( 154 ), ExtResource( 155 ) ],
@@ -1652,19 +1656,24 @@ animations = [ {
 "name": "drawer_close",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
+"frames": [ ExtResource( 169 ), ExtResource( 170 ), ExtResource( 165 ) ],
 "loop": false,
-"name": "drawer_eat",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 171 ), ExtResource( 166 ), ExtResource( 167 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 162 ), ExtResource( 157 ), ExtResource( 159 ) ],
-"loop": false,
-"name": "drawer_open3",
+"name": "drawer_open2",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 164 ), ExtResource( 168 ), ExtResource( 163 ) ],
 "loop": false,
 "name": "drawer_open1",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 159 ), ExtResource( 159 ), ExtResource( 156 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 158 ), ExtResource( 152 ), ExtResource( 152 ) ],
+"loop": false,
+"name": "drawer_eat",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 151 ) ],
+"loop": false,
+"name": "drawer_idle",
 "speed": 8.0
 } ]
 
@@ -1925,19 +1934,14 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ ExtResource( 120 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 117 ) ],
+"frames": [ null, ExtResource( 116 ), ExtResource( 144 ), ExtResource( 122 ), ExtResource( 136 ), ExtResource( 148 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 146 ), null ],
 "loop": true,
-"name": "mouse_angry",
-"speed": 5.0
+"name": "mouse_outin",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 114 ), ExtResource( 114 ), ExtResource( 111 ), ExtResource( 113 ), ExtResource( 112 ), ExtResource( 115 ) ],
 "loop": true,
 "name": "mouse_idle",
-"speed": 8.0
-}, {
-"frames": [ null, ExtResource( 116 ), ExtResource( 144 ), ExtResource( 122 ), ExtResource( 136 ), ExtResource( 148 ), ExtResource( 141 ), ExtResource( 137 ), ExtResource( 138 ), ExtResource( 146 ), null ],
-"loop": true,
-"name": "mouse_outin",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 145 ), ExtResource( 126 ), ExtResource( 132 ), ExtResource( 150 ), ExtResource( 121 ), ExtResource( 124 ), ExtResource( 135 ), ExtResource( 127 ) ],
@@ -1945,15 +1949,20 @@ animations = [ {
 "name": "mouse_in",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 131 ), ExtResource( 125 ), ExtResource( 147 ), ExtResource( 139 ), ExtResource( 123 ), ExtResource( 129 ), ExtResource( 128 ), ExtResource( 149 ) ],
+"loop": true,
+"name": "mouse_outeat",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 130 ), ExtResource( 134 ), ExtResource( 133 ), ExtResource( 130 ), ExtResource( 140 ), ExtResource( 142 ), ExtResource( 130 ), ExtResource( 143 ) ],
 "loop": true,
 "name": "mouse_eating",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 131 ), ExtResource( 125 ), ExtResource( 147 ), ExtResource( 139 ), ExtResource( 123 ), ExtResource( 129 ), ExtResource( 128 ), ExtResource( 149 ) ],
+"frames": [ ExtResource( 120 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 117 ), ExtResource( 120 ), ExtResource( 118 ), ExtResource( 120 ), ExtResource( 117 ) ],
 "loop": true,
-"name": "mouse_outeat",
-"speed": 8.0
+"name": "mouse_angry",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=24]
@@ -2038,6 +2047,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioMouse")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 625 )
+} ],
+"times": PoolRealArray( 0.25 )
 }
 
 [sub_resource type="Animation" id=25]
@@ -2154,6 +2177,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioMouse")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 624 )
+} ],
+"times": PoolRealArray( 0.125 )
 }
 
 [sub_resource type="SpriteFrames" id=19]
@@ -2283,6 +2320,11 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=75]
 animations = [ {
+"frames": [ ExtResource( 317 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 318 ) ],
+"loop": true,
+"name": "hen_move",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 313 ) ],
 "loop": false,
 "name": "hen_idle",
@@ -2291,11 +2333,6 @@ animations = [ {
 "frames": [ ExtResource( 325 ), ExtResource( 321 ), ExtResource( 319 ), ExtResource( 332 ), ExtResource( 324 ), ExtResource( 320 ), ExtResource( 329 ), ExtResource( 326 ), ExtResource( 322 ), ExtResource( 330 ), ExtResource( 327 ), ExtResource( 331 ), ExtResource( 328 ), ExtResource( 323 ) ],
 "loop": false,
 "name": "hen_spin",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 317 ), ExtResource( 314 ), ExtResource( 315 ), ExtResource( 316 ), ExtResource( 318 ) ],
-"loop": true,
-"name": "hen_move",
 "speed": 8.0
 } ]
 
@@ -2467,14 +2504,14 @@ tracks/3/keys = {
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 92 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 86 ) ],
-"loop": true,
-"name": "pendulum_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 92 ) ],
 "loop": false,
 "name": "pendulum_stop",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 92 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 93 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 86 ) ],
+"loop": true,
+"name": "pendulum_idle",
 "speed": 8.0
 } ]
 
@@ -2602,16 +2639,6 @@ animations = [ {
 "name": "gata_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 17 ) ],
-"loop": true,
-"name": "gata_ear",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 61 ) ],
-"loop": true,
-"name": "gata_awake",
-"speed": 8.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "gata_empty",
@@ -2620,6 +2647,16 @@ animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "gata_tail",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "gata_ear",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 45 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 38 ), ExtResource( 16 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 58 ), ExtResource( 66 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 74 ), ExtResource( 51 ), ExtResource( 65 ), ExtResource( 68 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 53 ), ExtResource( 63 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 47 ), ExtResource( 50 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "gata_awake",
 "speed": 8.0
 } ]
 
@@ -3051,14 +3088,14 @@ tracks/1/keys = {
 
 [sub_resource type="SpriteFrames" id=87]
 animations = [ {
-"frames": [ ExtResource( 345 ) ],
-"loop": false,
-"name": "curtain_idle",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 346 ), ExtResource( 347 ), ExtResource( 348 ), ExtResource( 351 ), ExtResource( 350 ), ExtResource( 349 ) ],
 "loop": true,
 "name": "curtain_move",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 345 ) ],
+"loop": false,
+"name": "curtain_idle",
 "speed": 8.0
 } ]
 
@@ -3198,14 +3235,14 @@ animations = [ {
 "name": "spider_idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 302 ), ExtResource( 304 ), ExtResource( 301 ), ExtResource( 303 ), ExtResource( 305 ) ],
-"loop": false,
-"name": "spider_up",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 312 ), ExtResource( 309 ), ExtResource( 307 ), ExtResource( 311 ), ExtResource( 310 ), ExtResource( 306 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ), ExtResource( 308 ) ],
 "loop": false,
 "name": "spider_stilldown",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 302 ), ExtResource( 304 ), ExtResource( 301 ), ExtResource( 303 ), ExtResource( 305 ) ],
+"loop": false,
+"name": "spider_up",
 "speed": 8.0
 } ]
 
@@ -3484,7 +3521,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=154]
 resource_name = "animate"
-length = 5.125
+length = 5.75
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -3520,21 +3557,45 @@ tracks/2/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 606 )
-}, {
-"end_offset": 0.149437,
-"start_offset": 0.0,
-"stream": ExtResource( 604 )
-}, {
+"stream": ExtResource( 614 )
+} ],
+"times": PoolRealArray( 1.76047 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioEnding08c")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 614 )
+"stream": ExtResource( 606 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 613 )
 } ],
-"times": PoolRealArray( 0.375, 1.25, 1.5, 3.25 )
+"times": PoolRealArray( 0, 3 )
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("AudioEnding08c")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 604 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 585 )
+} ],
+"times": PoolRealArray( 1.5, 2.01866 )
 }
 
 [sub_resource type="Animation" id=155]
@@ -3609,7 +3670,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=145]
 resource_name = "animate"
 length = 3.25
-loop = true
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -3684,8 +3744,12 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"clips": [  ],
-"times": PoolRealArray(  )
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 590 )
+} ],
+"times": PoolRealArray( 1.625 )
 }
 
 [sub_resource type="Animation" id=146]
@@ -3725,34 +3789,9 @@ animations = [ {
 "name": "bird_leaves",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
-"loop": false,
-"name": "bird_falls2",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 372 ) ],
-"loop": true,
-"name": "bird_empty",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 343 ) ],
 "loop": false,
 "name": "bird_appears",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 356 ), ExtResource( 357 ), ExtResource( 359 ) ],
-"loop": false,
-"name": "bird_enters",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 378 ), ExtResource( 379 ), ExtResource( 380 ) ],
-"loop": false,
-"name": "bird_falls1",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 354 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 363 ) ],
-"loop": true,
-"name": "bird_appears_love",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 376 ), ExtResource( 374 ), ExtResource( 375 ), ExtResource( 377 ), ExtResource( 389 ), ExtResource( 388 ), ExtResource( 385 ), ExtResource( 387 ), ExtResource( 386 ), ExtResource( 384 ) ],
@@ -3760,14 +3799,39 @@ animations = [ {
 "name": "bird_falls3",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
+"loop": true,
+"name": "bird_continues",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 360 ), ExtResource( 361 ), ExtResource( 366 ), ExtResource( 364 ) ],
 "loop": true,
 "name": "bird_enters_love",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 352 ), ExtResource( 353 ), ExtResource( 355 ) ],
+"frames": [ ExtResource( 372 ) ],
 "loop": true,
-"name": "bird_continues",
+"name": "bird_empty",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 356 ), ExtResource( 357 ), ExtResource( 359 ) ],
+"loop": false,
+"name": "bird_enters",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 354 ), ExtResource( 358 ), ExtResource( 362 ), ExtResource( 363 ) ],
+"loop": true,
+"name": "bird_appears_love",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 383 ), ExtResource( 381 ), ExtResource( 382 ) ],
+"loop": false,
+"name": "bird_falls2",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 378 ), ExtResource( 379 ), ExtResource( 380 ) ],
+"loop": false,
+"name": "bird_falls1",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 365 ), ExtResource( 367 ), ExtResource( 368 ), ExtResource( 369 ), ExtResource( 373 ), ExtResource( 370 ), ExtResource( 371 ) ],
@@ -4226,7 +4290,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=111]
 resource_name = "bird_passes"
-length = 0.875
+length = 0.625
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -4247,10 +4311,24 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 0, 1, 2, 3, 4, 5 ]
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioBird")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 598 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=119]
@@ -4655,7 +4733,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=129]
 resource_name = "animate"
-length = 2.375
+length = 2.625
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -4676,10 +4754,42 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2, 2.125 ),
+"times": PoolRealArray( 0, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2, 2.125, 2.25, 2.375 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioEnding03")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 606 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 621 )
+} ],
+"times": PoolRealArray( 0, 1 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioEnding03")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 604 )
+} ],
+"times": PoolRealArray( 0.625 )
 }
 
 [sub_resource type="Animation" id=130]
@@ -4740,7 +4850,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=133]
 resource_name = "animate"
-length = 2.0
+length = 2.25
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -4761,10 +4871,42 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.125, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioEnding04")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 606 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 604 )
+} ],
+"times": PoolRealArray( 0.25, 0.75 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioEnding04")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 622 )
+} ],
+"times": PoolRealArray( 1.125 )
 }
 
 [sub_resource type="Animation" id=134]
@@ -4838,7 +4980,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=137]
 resource_name = "animate"
-length = 2.0
+length = 3.0
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -4863,6 +5005,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioEnding05")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 606 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 604 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 603 )
+} ],
+"times": PoolRealArray( 0, 1, 2.75 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioEnding05")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 623 )
+} ],
+"times": PoolRealArray( 1.25 )
 }
 
 [sub_resource type="Animation" id=138]
@@ -4936,7 +5114,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=140]
 resource_name = "animate"
-length = 3.75
+length = 4.75
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:animation")
@@ -4957,10 +5135,36 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2, 2.125, 2.25, 2.375, 2.5, 2.625, 2.75, 2.875, 3, 3.125, 3.25, 3.375, 3.5, 3.625 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 1.25, 1.375, 1.5, 1.625, 1.75, 1.875, 2, 2.125, 2.25, 2.375, 2.5, 2.625, 2.75, 2.875, 3, 3.125, 3.25, 3.375, 3.5, 3.625, 3.75, 3.875, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("AudioEnding07")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 606 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 604 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 627 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 628 )
+} ],
+"times": PoolRealArray( 0.375, 1.625, 1.875, 3 )
 }
 
 [sub_resource type="Animation" id=141]
@@ -5036,6 +5240,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=148]
 resource_name = "animate"
 length = 4.0
+loop = true
 step = 0.125
 tracks/0/type = "value"
 tracks/0/path = NodePath("SpriteEnding02:animation")
@@ -5056,10 +5261,48 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.125, 0.25, 0.625, 0.75, 0.875, 1, 1.5, 1.625, 1.75, 1.875, 2, 2.125, 2.25, 2.375, 2.5, 2.625, 2.75, 2.875, 3, 3.125, 3.25, 3.375, 3.5, 3.625, 3.75 ),
+"times": PoolRealArray( 0, 0.125, 0.25, 0.375, 0.75, 0.875, 1, 1.5, 1.625, 1.75, 1.875, 2, 2.125, 2.25, 2.375, 2.5, 2.625, 2.75, 2.875, 3, 3.125, 3.25, 3.375, 3.5, 3.625, 3.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("SpriteEnding02/AudioEnding02")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 606 )
+} ],
+"times": PoolRealArray( 0.375 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("SpriteEnding02/AudioEnding02")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 626 )
+} ],
+"times": PoolRealArray( 1.25 )
+}
+tracks/4/type = "audio"
+tracks/4/path = NodePath("SpriteEnding02/AudioEnding02")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
 }
 
 [sub_resource type="Animation" id=150]
@@ -5577,6 +5820,7 @@ position = Vector2( 1322, 606 )
 position = Vector2( -1, -6 )
 frames = SubResource( 23 )
 animation = "mouse_eating"
+frame = 6
 
 [node name="PlayerMouse" type="AnimationPlayer" parent="AreaMouse/SpriteMouse"]
 autoplay = "mouse_idle"
@@ -5588,6 +5832,9 @@ anims/mouse_idle = SubResource( 25 )
 anims/mouse_in = SubResource( 29 )
 anims/mouse_outeat = SubResource( 30 )
 anims/mouse_outin = SubResource( 26 )
+
+[node name="AudioMouse" type="AudioStreamPlayer" parent="AreaMouse/SpriteMouse"]
+stream = ExtResource( 625 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AreaMouse"]
 position = Vector2( 10.0001, 2 )
@@ -5791,7 +6038,8 @@ stream = ExtResource( 605 )
 [node name="SpriteBird" type="AnimatedSprite" parent="."]
 position = Vector2( 1070, 587 )
 frames = SubResource( 96 )
-animation = "bird_enters_love"
+animation = "bird_passes"
+frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -5819,7 +6067,6 @@ anims/bird_song = SubResource( 156 )
 
 [node name="AudioBird" type="AudioStreamPlayer" parent="SpriteBird"]
 stream = ExtResource( 598 )
-volume_db = 10.0
 
 [node name="AreaFish" type="Area2D" parent="."]
 position = Vector2( 1641, 653 )
@@ -5880,6 +6127,9 @@ anims/RESET = SubResource( 128 )
 anims/animate = SubResource( 129 )
 anims/hidden = SubResource( 130 )
 
+[node name="AudioEnding03" type="AudioStreamPlayer" parent="SpriteEnding03"]
+stream = ExtResource( 621 )
+
 [node name="SpriteEnding04" type="AnimatedSprite" parent="."]
 position = Vector2( 1429.5, 580.5 )
 frames = SubResource( 131 )
@@ -5891,6 +6141,9 @@ anims/RESET = SubResource( 132 )
 anims/animate = SubResource( 133 )
 anims/hidden = SubResource( 134 )
 
+[node name="AudioEnding04" type="AudioStreamPlayer" parent="SpriteEnding04"]
+stream = ExtResource( 622 )
+
 [node name="SpriteEnding05" type="AnimatedSprite" parent="."]
 position = Vector2( 1405, 649.5 )
 frames = SubResource( 135 )
@@ -5901,6 +6154,9 @@ autoplay = "hidden"
 anims/RESET = SubResource( 136 )
 anims/animate = SubResource( 137 )
 anims/hidden = SubResource( 138 )
+
+[node name="AudioEnding05" type="AudioStreamPlayer" parent="SpriteEnding05"]
+stream = ExtResource( 603 )
 
 [node name="SpriteEnding07" type="AnimatedSprite" parent="."]
 position = Vector2( 1075.5, 699.5 )
@@ -5916,6 +6172,9 @@ anims/RESET = SubResource( 142 )
 anims/animate = SubResource( 140 )
 anims/hidden = SubResource( 141 )
 
+[node name="AudioEnding07" type="AudioStreamPlayer" parent="SpriteEnding07"]
+stream = ExtResource( 627 )
+
 [node name="SpriteEnding02" type="AnimatedSprite" parent="."]
 position = Vector2( 1343, 514 )
 frames = SubResource( 147 )
@@ -5927,6 +6186,9 @@ autoplay = "hidden"
 anims/RESET = SubResource( 149 )
 anims/animate = SubResource( 148 )
 anims/hidden = SubResource( 150 )
+
+[node name="AudioEnding02" type="AudioStreamPlayer" parent="SpriteEnding02"]
+stream = ExtResource( 606 )
 
 [node name="SpriteDora" type="AnimatedSprite" parent="."]
 position = Vector2( 464, 756 )
@@ -5984,7 +6246,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 1
+frame = 9
 playing = true
 flip_h = true
 flip_v = true
