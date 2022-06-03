@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/scene_lose.wav-0eb1cebe9c1894f5c98a9c3938d4c687.sample"
+
+[deps]
+
+source_file="res://audio/scene_lose.wav"
+dest_files=[ "res://.import/scene_lose.wav-0eb1cebe9c1894f5c98a9c3938d4c687.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonPressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://RewardScene.gd" type="Script" id=4]
 [ext_resource path="res://assets/scratches_animation/scratches06.png" type="Texture" id=5]
 [ext_resource path="res://assets/scratches_animation/scratches09.png" type="Texture" id=6]

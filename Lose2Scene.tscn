@@ -1,8 +1,8 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonPressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://Lose2Scene.gd" type="Script" id=4]
 [ext_resource path="res://screens/07_lose2.png" type="Texture" id=5]
 [ext_resource path="res://assets/scratches_animation/scratches06.png" type="Texture" id=6]
@@ -30,6 +30,11 @@
 [ext_resource path="res://assets/scratches_animation/scratches03.png" type="Texture" id=28]
 [ext_resource path="res://assets/scratches_animation/scratches04.png" type="Texture" id=29]
 [ext_resource path="res://assets/scratches_animation/scratches05.png" type="Texture" id=30]
+[ext_resource path="res://audio/scene_lose.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/button_right.png" type="Texture" id=32]
+[ext_resource path="res://assets/button_left.png" type="Texture" id=33]
+[ext_resource path="res://assets/button_middle.png" type="Texture" id=34]
+[ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=35]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 blend_mode = 3
@@ -45,6 +50,32 @@ animations = [ {
 "speed": 12.0
 } ]
 
+[sub_resource type="Animation" id=5]
+resource_name = "sound"
+length = 3.75
+step = 0.125
+tracks/0/type = "audio"
+tracks/0/path = NodePath("PlayerScene/AudioScene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 31 )
+} ],
+"times": PoolRealArray( 0.25 )
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 56
+outline_size = 7
+outline_color = Color( 0.145098, 0.133333, 0.133333, 1 )
+use_filter = true
+font_data = ExtResource( 35 )
+
 [node name="Lose2Scene" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -52,28 +83,64 @@ script = ExtResource( 4 )
 position = Vector2( 960, 540 )
 texture = ExtResource( 5 )
 
+[node name="ButtonLeft" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -575.982, 362.804 )
+scale = Vector2( 0.373494, 0.559242 )
+texture = ExtResource( 33 )
+offset = Vector2( 95, 134.461 )
+
+[node name="ButtonMiddle" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -621.586, 363.645 )
+scale = Vector2( 1.14828, 0.558685 )
+texture = ExtResource( 34 )
+offset = Vector2( 282.47, 133.984 )
+
+[node name="ButtonRight" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -628.482, 363.941 )
+scale = Vector2( 0.884615, 0.554502 )
+texture = ExtResource( 32 )
+offset = Vector2( 635.87, 134.461 )
+
+[node name="ButtonLeft2" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -9.98193, 362.804 )
+scale = Vector2( 0.373494, 0.559242 )
+texture = ExtResource( 33 )
+offset = Vector2( 95, 134.461 )
+
+[node name="ButtonMiddle2" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -55.5854, 363.645 )
+scale = Vector2( 1.14828, 0.558685 )
+texture = ExtResource( 34 )
+offset = Vector2( 282.47, 133.984 )
+
+[node name="ButtonRight2" type="Sprite" parent="Lose2SceneBkg"]
+position = Vector2( -62.4818, 347.941 )
+scale = Vector2( 0.884615, 0.554502 )
+texture = ExtResource( 32 )
+offset = Vector2( 635.87, 134.461 )
+
 [node name="ButtonReplay" type="Button" parent="."]
-margin_left = 463.0
-margin_top = 914.0
-margin_right = 968.0
-margin_bottom = 1002.0
+margin_left = 410.0
+margin_top = 930.0
+margin_right = 915.0
+margin_bottom = 1028.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
 text = "Volver a jugar"
 
 [node name="ButtonCredits" type="Button" parent="."]
-margin_left = 1028.0
-margin_top = 914.0
-margin_right = 1532.0
-margin_bottom = 1002.0
+margin_left = 978.0
+margin_top = 930.0
+margin_right = 1482.0
+margin_bottom = 1031.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
 text = "Finalizar juego"
 
 [node name="OverlayDirt" type="Sprite" parent="."]
@@ -90,11 +157,31 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 21
+frame = 5
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="PlayerScene" type="AnimationPlayer" parent="."]
+autoplay = "sound"
+anims/sound = SubResource( 5 )
+
+[node name="AudioScene" type="AudioStreamPlayer" parent="PlayerScene"]
+stream = ExtResource( 31 )
+
+[node name="EndingText" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 811.0
+margin_right = 1919.0
+margin_bottom = 904.0
+rect_pivot_offset = Vector2( 1525, -335 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]Pero que bestia eres, ¡Te has cargado a Audrey![/center]"
+text = "Pero que bestia eres, ¡Te has cargado a Audrey!"
+override_selected_font_color = true
 
 [connection signal="pressed" from="ButtonReplay" to="." method="_on_ButtonReplay_pressed"]
 [connection signal="pressed" from="ButtonCredits" to="." method="_on_ButtonCredits_pressed"]

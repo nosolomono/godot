@@ -1,8 +1,8 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonPressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://CreditsScene.gd" type="Script" id=4]
 [ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/scratches_animation/scratches06.png" type="Texture" id=6]
@@ -30,14 +30,17 @@
 [ext_resource path="res://assets/scratches_animation/scratches03.png" type="Texture" id=28]
 [ext_resource path="res://assets/scratches_animation/scratches04.png" type="Texture" id=29]
 [ext_resource path="res://assets/scratches_animation/scratches05.png" type="Texture" id=30]
+[ext_resource path="res://assets/button_right.png" type="Texture" id=31]
+[ext_resource path="res://assets/button_left.png" type="Texture" id=32]
+[ext_resource path="res://assets/button_middle.png" type="Texture" id=33]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
 
-[sub_resource type="DynamicFont" id=3]
-size = 78
+[sub_resource type="DynamicFont" id=6]
+size = 56
 outline_size = 7
-outline_color = Color( 0.359375, 0.318665, 0.318665, 1 )
+outline_color = Color( 0.145098, 0.133333, 0.133333, 1 )
 use_filter = true
 font_data = ExtResource( 5 )
 
@@ -63,30 +66,48 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
+[node name="ButtonLeft" type="Sprite" parent="ColorRect"]
+position = Vector2( 565.018, 858.804 )
+scale = Vector2( 0.373494, 0.559242 )
+texture = ExtResource( 32 )
+offset = Vector2( 95, 134.461 )
+
+[node name="ButtonMiddle" type="Sprite" parent="ColorRect"]
+position = Vector2( 492.608, 859.645 )
+scale = Vector2( 1.56088, 0.558685 )
+texture = ExtResource( 33 )
+offset = Vector2( 282.47, 133.984 )
+
+[node name="ButtonRight" type="Sprite" parent="ColorRect"]
+position = Vector2( 837.085, 859.941 )
+scale = Vector2( 0.666669, 0.554502 )
+texture = ExtResource( 31 )
+offset = Vector2( 635.87, 134.461 )
+
 [node name="CreditsSceneBkg" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
 texture = SubResource( 1 )
 
 [node name="ButtonReplay" type="Button" parent="."]
-margin_left = 584.0
+margin_left = 596.0
 margin_top = 888.0
 margin_right = 1275.0
-margin_bottom = 976.0
+margin_bottom = 985.0
 rect_pivot_offset = Vector2( 267, 79 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
 text = "Volver al inicio"
 
 [node name="IntroText" type="RichTextLabel" parent="."]
-margin_left = 392.0
-margin_top = 437.0
-margin_right = 1509.0
-margin_bottom = 545.0
+margin_left = 373.0
+margin_top = 669.0
+margin_right = 1490.0
+margin_bottom = 777.0
 rect_pivot_offset = Vector2( 1525, -335 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 6 )
 bbcode_enabled = true
 bbcode_text = "[center]by Cristina Fàbregas[/center]"
 text = "by Cristina Fàbregas"
@@ -106,7 +127,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "scratches"
-frame = 12
+frame = 13
 playing = true
 __meta__ = {
 "_edit_lock_": true

@@ -1,8 +1,8 @@
 [gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonPressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://InstructionsScene.gd" type="Script" id=4]
 [ext_resource path="res://assets/button_left.png" type="Texture" id=5]
 [ext_resource path="res://assets/button_middle.png" type="Texture" id=6]
@@ -95,11 +95,11 @@ scale = Vector2( 0.349, 0.422 )
 texture = ExtResource( 8 )
 offset = Vector2( 416.906, -18.8405 )
 
-[node name="ButtonBack" type="Button" parent="."]
-margin_left = 621.0
-margin_top = 697.0
-margin_right = 892.0
-margin_bottom = 772.0
+[node name="ButtonBack" type="Button" parent="InstructionsSceneBkg"]
+margin_left = -433.0
+margin_top = -128.0
+margin_right = -162.0
+margin_bottom = -53.0
 rect_pivot_offset = Vector2( 37, 30 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
@@ -107,11 +107,11 @@ custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 3 )
 text = "Volver"
 
-[node name="ButtonRestart" type="Button" parent="."]
-margin_left = 993.0
-margin_top = 697.0
-margin_right = 1264.0
-margin_bottom = 772.0
+[node name="ButtonRestart" type="Button" parent="InstructionsSceneBkg"]
+margin_left = -61.0
+margin_top = -128.0
+margin_right = 210.0
+margin_bottom = -53.0
 rect_pivot_offset = Vector2( 37, 30 )
 custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
@@ -133,10 +133,11 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
+frame = 22
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
-[connection signal="pressed" from="ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
+[connection signal="pressed" from="InstructionsSceneBkg/ButtonBack" to="." method="_on_ButtonBack_pressed"]
+[connection signal="pressed" from="InstructionsSceneBkg/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]

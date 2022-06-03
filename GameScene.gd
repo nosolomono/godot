@@ -4,6 +4,8 @@ var cursor_arrow = load("res://assets/pointer_arrow.png")
 var cursor_hand = load("res://assets/pointer_hand.png")
 
 onready var _cursor_sprite = $CursorSprite
+onready var _area_menubutton = $AreaMenuButton
+onready var _sprite_menubutton = get_node("AreaMenuButton/SpriteMenuButton")
 onready var _area_audrey = $AreaAudrey
 onready var _player_audrey = get_node("AreaAudrey/SpriteAudrey/PlayerAudrey")
 onready var _audio_audrey = get_node("AreaAudrey/SpriteAudrey/AudioAudrey")
@@ -57,12 +59,17 @@ onready var _player_ending_05 = get_node("SpriteEnding05/PlayerEnding05")
 onready var _player_ending_06 = get_node("SpriteEnding06/PlayerEnding06")
 onready var _player_ending_07 = get_node("SpriteEnding07/PlayerEnding07")
 onready var _player_ending_08c = get_node("SpriteEnding08c/PlayerEnding08c")
+onready var _ending_text
+# onready var _global_ending_text = Global.ending_text
 
-onready var _ending_text = ""
-
-
+func _pass_ending_text(_ending_text):
+	Global.ending_text = _ending_text
+	# _global_ending_text = _ending_text
+	# print("Ending text is: ",_ending_text)
 
 func _ready():
+	
+	print("Ending text is: ",Global.ending_text)
 	
 	_animated_overlay.play("fade_out")
 	# pass
@@ -76,6 +83,8 @@ func _ready():
 	
 func _on_ButtonWin_pressed():
 	Global.goto_scene("res://WinScene.tscn")
+	_ending_text = "hey ho hola hola"
+	_pass_ending_text(_ending_text)
 	
 func _on_ButtonLose1_pressed():
 	Global.goto_scene("res://Lose1Scene.tscn")
@@ -83,6 +92,23 @@ func _on_ButtonLose1_pressed():
 func _on_ButtonLose2_pressed():
 	Global.goto_scene("res://Lose2Scene.tscn")
 
+
+func _gotoScene_Lose1():
+	_pass_ending_text(_ending_text)
+	yield(get_tree().create_timer(0.5), "timeout")
+	Global.goto_scene("res://Lose1Scene.tscn")
+	
+func _gotoScene_Lose2():
+	_pass_ending_text(_ending_text)
+	yield(get_tree().create_timer(0.5), "timeout")
+	Global.goto_scene("res://Lose2Scene.tscn")
+	
+func _gotoScene_Win():
+	_pass_ending_text(_ending_text)
+	yield(get_tree().create_timer(0.5), "timeout")
+	Global.goto_scene("res://WinScene.tscn")
+	
+	
 
 """
 Change cursor when mouseOver on an actor
@@ -103,6 +129,7 @@ var _mouse_eating = false
 var _game_over = false
 var _bird_on_coat = false
 var _spider_down = false
+var _show_instructions = false
 
 func _process(delta):
 	if _actor_hover == true and _disable_click == false:
@@ -111,7 +138,7 @@ func _process(delta):
 	elif _disable_click == false:
 		_cursor_sprite.play("pointer")
 		
-	elif _disable_click == true:
+	elif _disable_click == true and _show_instructions == false:
 		_cursor_sprite.play("hidden")
 
 	if _dora_awake == true and _game_over == false:
@@ -330,8 +357,6 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_audrey.play("gata_empty")
 				_player_bird.play("bird_stuck")
 				_player_ending_08c.play("animate")
-				_disable_click = true
-				_ending_text = ""
 				
 			if _window_open == false and _spider_down == true:
 					
@@ -745,10 +770,6 @@ func _on_PlayerSpider_animation_started(anim_name):
 
 func _on_PlayerEnding04_animation_finished(anim_name):
 	_dora_awake = true
-	
-func _on_PlayerEnding05_animation_finished(anim_name):
-	pass
-
 
 func _on_PlayerSpider_animation_finished(anim_name):
 	
@@ -900,7 +921,7 @@ func _on_AreaWindow_input_event(viewport, event, shape_idx):
 
 		if _window_last_animation == "window_idle":
 			_player_window.play("window_open")
-			_window_open = true;
+			_window_open = true
 			_window_last_animation = _player_window.current_animation
 			
 			if _door_open == true:
@@ -922,12 +943,12 @@ func _on_PlayerWindow_animation_finished(anim_name):
 	if anim_name == "window_open":
 		_player_window.play("window_stillopen")
 		_window_last_animation = _player_window.current_animation
-		_window_open = true;
+		_window_open = true
 
 	if anim_name == "window_close":
 		_player_window.play("window_idle")
 		_window_last_animation = _player_window.current_animation
-		_window_open = false;
+		_window_open = false
 		_player_hen.play("hen_idle")
 		_hen_spin = false
 		_hanger_fall = false
@@ -1060,7 +1081,7 @@ func _on_PlayerBird_animation_finished(anim_name):
 		print("bird last anim: ", _bird_last_animation)
 		_player_chain.play("chain_bird")
 		_chain_last_animation = "chain_bird"
-		_bird_stuck = true;
+		_bird_stuck = true
 
 	if anim_name == "bird_passes":
 		
@@ -1120,7 +1141,6 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_player_bird.play("bird_stuck")
 			_player_ending_08c.play("animate")
 			_disable_click = true
-			_ending_text = ""
 		
 			
 	"""	
@@ -1136,5 +1156,33 @@ func _on_PlayerBird_animation_finished(anim_name):
 	"""
 
 
+# WHEN GAME IS OVER LOAD NEXT SCENE:
 
+func _on_PlayerDora_animation_finished(anim_name):
+	_gotoScene_Lose1()
 
+func _on_PlayerEnding05_animation_finished(anim_name):
+	if anim_name == "animate":
+		_gotoScene_Lose2()
+
+func _on_PlayerEnding08c_animation_finished(anim_name):
+	if anim_name == "animate":
+		_gotoScene_Win()
+
+		
+# MENU BUTTON & INSTRUCTIONS SCENE:
+
+func _on_AreaMenuButton_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+		_disable_click = true
+		_show_instructions = true
+		$InstructionsSceneBkg.visible = true
+		
+func _on_ButtonBack_pressed():
+	$InstructionsSceneBkg.visible = false
+	_disable_click = false
+	_show_instructions = false
+	# Global.goto_scene("res://GameScene.tscn")
+
+func _on_ButtonRestart_pressed():
+	Global.goto_scene("res://InitialScene.tscn")

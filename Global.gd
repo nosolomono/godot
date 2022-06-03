@@ -1,6 +1,7 @@
 extends Node
 
 var current_scene = null
+var ending_text = "Unset"
 
 
 """

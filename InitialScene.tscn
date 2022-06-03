@@ -1,8 +1,8 @@
 [gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://InitialScene.gd" type="Script" id=1]
-[ext_resource path="res://ButtonStyleActive.tres" type="StyleBox" id=2]
-[ext_resource path="res://ButtonStyleNormal.tres" type="StyleBox" id=3]
+[ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
+[ext_resource path="res://ButtonPressed.tres" type="StyleBox" id=3]
 [ext_resource path="res://screens/02_start.png" type="Texture" id=4]
 [ext_resource path="res://fonts/Lemon-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/button_left.png" type="Texture" id=6]
@@ -80,8 +80,8 @@ margin_right = 1658.0
 margin_bottom = 950.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = ExtResource( 2 )
-custom_styles/pressed = ExtResource( 2 )
-custom_styles/normal = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
 text = "Jugar"
 
 [node name="OverlayDirt" type="Sprite" parent="."]
@@ -98,7 +98,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "scratches"
-frame = 4
+frame = 12
 playing = true
 __meta__ = {
 "_edit_lock_": true
