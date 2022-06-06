@@ -365,14 +365,14 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=64]
 animations = [ {
-"frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "fish_jump",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "fish_idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 56 ), ExtResource( 44 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 46 ), ExtResource( 54 ), ExtResource( 40 ), ExtResource( 55 ), ExtResource( 24 ), ExtResource( 37 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "fish_jump",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 43 ), ExtResource( 38 ), ExtResource( 47 ) ],
@@ -611,7 +611,7 @@ texture = ExtResource( 17 )
 position = Vector2( 1231, 383 )
 frames = SubResource( 18 )
 animation = "pendulum_idle"
-frame = 2
+frame = 4
 playing = true
 
 [node name="SpriteFish" type="AnimatedSprite" parent="."]
@@ -635,7 +635,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 22
+frame = 13
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -668,12 +668,12 @@ custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[center]¡Consigue que la gatita Audrey destroce
 el abrigo rojo sin despertar a su dueña
-y obtindràs tu recompensa![/center]"
+y obtendrás  tu recompensa![/center]"
 visible_characters = 0
 percent_visible = 0.0
 text = "¡Consigue que la gatita Audrey destroce
 el abrigo rojo sin despertar a su dueña
-y obtindràs tu recompensa!"
+y obtendrás  tu recompensa!"
 override_selected_font_color = true
 
 [node name="PlayerText" type="AnimationPlayer" parent="IntroText"]

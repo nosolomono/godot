@@ -60,25 +60,15 @@ onready var _player_ending_06 = get_node("SpriteEnding06/PlayerEnding06")
 onready var _player_ending_07 = get_node("SpriteEnding07/PlayerEnding07")
 onready var _player_ending_08c = get_node("SpriteEnding08c/PlayerEnding08c")
 onready var _ending_text
-# onready var _global_ending_text = Global.ending_text
 
 func _pass_ending_text(_ending_text):
 	Global.ending_text = _ending_text
-	# _global_ending_text = _ending_text
-	# print("Ending text is: ",_ending_text)
 
 func _ready():
 	
-	print("Ending text is: ",Global.ending_text)
-	
 	_animated_overlay.play("fade_out")
-	# pass
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_player_audrey.play("gata_idle")
-	# print("Audrey current animation: ", _player_audrey.current_animation)
-	# print("Mouse current animation: ", _player_mouse.current_animation)
-	# print(_player_audrey.is_playing())
-	# print(_player_mouse.is_playing())
 	
 	
 func _on_ButtonWin_pressed():
@@ -109,7 +99,6 @@ func _gotoScene_Win():
 	Global.goto_scene("res://WinScene.tscn")
 	
 	
-
 """
 Change cursor when mouseOver on an actor
 Check if Dora is awake
@@ -130,6 +119,7 @@ var _game_over = false
 var _bird_on_coat = false
 var _spider_down = false
 var _show_instructions = false
+var _is_ending = false
 
 func _process(delta):
 	if _actor_hover == true and _disable_click == false:
@@ -143,35 +133,10 @@ func _process(delta):
 
 	if _dora_awake == true and _game_over == false:
 		_player_dora.play("dora_awake")
-		# _sprite_dora.modulate = Color("#ff4d4d")
 		_game_over = true
 	
 	if _game_over == true:
 		pass
-
-	"""
-	if _bird_falling_position == 1:
-		_sprite_chain.modulate = Color("#FFFF41")
-
-	if _bird_falling_position == 2:
-		_sprite_chain.modulate = Color("#49FF41")
-		
-	if _bird_falling_position == 3:
-		_sprite_chain.modulate = Color("#4863FD")
-	"""
-		
-		
-	"""if(_window_open == false or _door_open == false) and _hen_last_animation == "hen_spin":
-		_player_hen.play("hen_move")
-		
-	if(_door_open == false):
-		_player_curtain.play("curtain_idle")
-		
-	if(_window_open == false or _door_open == false):
-		_player_curtain.play("curtain_idle")
-		
-	if(_window_open == true and _door_open == true):
-		_player_curtain.play("curtain_idle")"""
 		
 """
 Detecting Area2D mouseOver in order to change cursor for all actors
@@ -248,7 +213,6 @@ func _input(event):
 	
 	elif (event is InputEventMouseButton) and event.pressed and !_actor_hover:
 		
-		print("Clicked outside actor")
 		_area_audrey.modulate = Color("#7effff")
 		_area_metronome.modulate = Color("#7effff")
 		_area_mouse.modulate = Color("#7effff")
@@ -292,32 +256,20 @@ var _gata_awake = false
 func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click and !_disable_click and _player_audrey.current_animation == "gata_idle":
 		
-		# _audrey_random_ani = rand_range(2, 5)
 		_audrey_random_ani = rand_range(2, 4)
-		# print(_audrey_random_ani)
-		# print("Clicked Audrey!")
 
 		if _audrey_random_ani == 2:
 			_player_audrey.play("gata_ear")
-			print("current animation: ", _player_audrey.current_animation)
 			_gata_awake = false
 			
 		
-		# elif _audrey_random_ani == 3:
-			# _player_audrey.play("gata_tail")
-			# print("current animation: ", _player_audrey.current_animation)
-			# _gata_awake = false
-		
-		# elif _audrey_random_ani == 4:
 		elif _audrey_random_ani == 3:
 			
-			# if _bird_flying == false:
 			_player_audrey.play("gata_awake")
-			print("current animation: ", _player_audrey.current_animation)
 			_gata_awake = true
 				
 				
-			if _mouse_eating == true:
+			if _mouse_eating == true and _is_ending == false:
 				
 				""" # ENDING 02 """
 
@@ -328,8 +280,9 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_sprite_dishes.visible = false
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
 
-			if _bird_flying == true:
+			if _bird_flying == true and _is_ending == false:
 				
 				""" # ENDING 07 """
 				
@@ -338,8 +291,9 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
 				
-			if _bird_clock == true:
+			if _bird_clock == true and _is_ending == false:
 			
 				""" # ENDING 06 """
 				
@@ -349,16 +303,18 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
 				
 			
-			if _bird_on_coat == true:
+			if _bird_on_coat == true and _is_ending == false:
 				
 				""" # ENDING 08c (repeated) """
 				_player_audrey.play("gata_empty")
 				_player_bird.play("bird_stuck")
 				_player_ending_08c.play("animate")
+				_is_ending = true
 				
-			if _window_open == false and _spider_down == true:
+			if _window_open == false and _spider_down == true and _is_ending == false:
 					
 				""" # ENDING 04 (repeated) """
 				
@@ -367,8 +323,9 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
 				
-			if _window_open == true and _spider_down == true:
+			if _window_open == true and _spider_down == true and _is_ending == false:
 				
 				""" # ENDING 05 (repeated) """
 				
@@ -377,6 +334,7 @@ func _on_AreaAudrey_input_event(_viewport, event, _shape_idx):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Pero que bestia eres, ¡Te has cargado a Audrey!"
+				_is_ending = true
 				
 	else:
 		_audrey_random_ani = 1
@@ -392,8 +350,6 @@ func _on_PlayerEnding06_animation_finished(anim_name):
 Audrey returns to idle when animation is finished
 """
 func _on_PlayerAudrey_animation_finished(anim_name):
-	
-	print("Audrey finished animation: ", anim_name)
 	
 	_gata_awake = false
 	_player_audrey.play("gata_idle")
@@ -421,26 +377,14 @@ func _on_AreaMouse_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
 		if _player_mouse.current_animation == "mouse_idle":
 			
-			print("Bread on the floor? ", _bread_out)
-			
 			if (!_bread_out):
 				_player_mouse.play("mouse_outin")
 			
 			elif (_bread_out):
 				_player_mouse.play("mouse_outeat")
 			
-			
-		# if _mouse_out == false:
-		# 	_player_mouse.play("mouse_outin")
-		# 	_mouse_out = true
-		# elif _mouse_out == true:
-		# 	_player_mouse.play("mouse_idle")
-		# 	_mouse_out = false
-		# print("Mouse current animation: ", _player_mouse.current_animation)
 
 func _on_PlayerMouse_animation_finished(anim_name):
-	# print("Mouse finished animation: ", anim_name)
-	# print("Mouse current animation: ", _player_mouse.current_animation)
 	if anim_name == "mouse_outin":
 		_player_mouse.play("mouse_idle")
 		
@@ -450,13 +394,12 @@ func _on_PlayerMouse_animation_finished(anim_name):
 		_bread_out = false
 		_player_drawer.play("drawer_eat")
 		_drawer_last_animation = "drawer_eat"
-		# print("Drawer last animation: ", _drawer_last_animation)
 		
 	if anim_name == "mouse_eating" and _gata_awake == false:
 		_player_mouse.play("mouse_in")
 		_mouse_eating = false
 		
-	elif anim_name == "mouse_eating" and _gata_awake == true:	
+	elif anim_name == "mouse_eating" and _gata_awake == true and _is_ending == false:
 		
 		""" # ENDING 02 (repeated) """
 
@@ -467,21 +410,15 @@ func _on_PlayerMouse_animation_finished(anim_name):
 		_sprite_dishes.visible = false
 		_disable_click = true
 		_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+		_is_ending = true
 		
-	"""
-	elif anim_name == "mouse_eating" and _gata_awake == true:
-		_player_mouse.play("mouse_angry")
-
-	if anim_name == "mouse_angry":
-		_player_mouse.play("mouse_in")
-	"""
 		
 	if anim_name == "mouse_in":
 		_player_mouse.play("mouse_idle")
 
 func _on_PlayerMouse_animation_started(anim_name):
 	
-	if anim_name == "mouse_eating" and _gata_awake == true:	
+	if anim_name == "mouse_eating" and _gata_awake == true and _is_ending == false:
 		
 		""" # ENDING 02 (repeated 2) """
 
@@ -492,6 +429,7 @@ func _on_PlayerMouse_animation_started(anim_name):
 		_sprite_dishes.visible = false
 		_disable_click = true
 		_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+		_is_ending = true
 		
 		
 func _on_PlayerEnding02_animation_finished(anim_name):
@@ -505,8 +443,6 @@ var _bread_out = false
 
 func _on_AreaDrawer_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
-		# print("Drawer current animation: ", _player_drawer.current_animation)
-		print("Drawer last animation: ", _drawer_last_animation)
 		
 		if _drawer_last_animation == "drawer_idle":
 			_player_drawer.play("drawer_open1")
@@ -543,14 +479,12 @@ func _on_AreaCuckoo_input_event(viewport, event, shape_idx):
 		if _cuckoo_last_animation == "cuckoo_idle":
 			_player_cuckoo.play("cuckoo_out")
 			_cuckoo_last_animation = _player_cuckoo.current_animation
-			print("Cuckoo stop? ", _cuckoo_stop)
 			
 		elif _cuckoo_last_animation == "cuckoo_out":
 			_player_cuckoo.play("cuckoo_still")
 			_player_pendulum.play("pendulum_stop")
 			_cuckoo_last_animation = _player_cuckoo.current_animation
 			_cuckoo_stop = true
-			print("Cuckoo stop? ", _cuckoo_stop)
 			
 			if _bird_last_animation == "bird_empty":
 				_player_bird.play("bird_appears")
@@ -559,7 +493,6 @@ func _on_AreaCuckoo_input_event(viewport, event, shape_idx):
 			_player_cuckoo.play("cuckoo_in")
 			_player_pendulum.play("pendulum_idle")
 			_cuckoo_stop = false
-			print("Cuckoo stop? ", _cuckoo_stop)
 
 func _on_PlayerCuckoo_animation_finished(anim_name):
 	if anim_name == "cuckoo_out":
@@ -627,11 +560,11 @@ var _keys_last_animation = "keys_idle"
 
 func _on_AreaKeys_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
-		print("Keys current animation: ", _keys_last_animation)
+
 		if _keys_last_animation == "keys_idle":
 			_player_keys.play("keys_play")
 			_keys_last_animation = _player_keys.current_animation
-			print("Keys current animation: ", _keys_last_animation)
+
 
 func _on_PlayerKeys_animation_finished(anim_name):
 	if anim_name == "keys_play":
@@ -665,42 +598,27 @@ var _fish_out = false
 func _on_AreaFish_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
 		
-		# if _fish_last_animation == "fish_idle":
 		if _fish_count == 1:
 			_fish_count = 2
 			_player_fish.play("fish_bubbles")
 			_fish_out = false
 			
 		elif _fish_count == 2:
-			# _fish_count = 3
 			_fish_count = 1
-			# _player_fish.play("fish_bubbles")
 			_player_fish.play("fish_jump")
-			# _fish_out = false
 			_fish_out = true
-			
-		# elif _fish_count == 3:
-			# _fish_count = 1
-			# _player_fish.play("fish_jump")
-			# _fish_out = true
 		
 		_fish_last_animation = _player_keys.current_animation
-		
-		print("Last animation: ", _fish_last_animation)
-		print("Fish count: ", _fish_count)
-		print("Fish out? ", _fish_out)
 
 func _on_PlayerFish_animation_finished(anim_name):
 	
-	#print("Animation finished: ", _fish_last_animation)
 	_player_fish.play("fish_idle")
 	_fish_last_animation = _player_keys.current_animation
-	# _fish_out = false
 	
 	
 	""" # ENDING 03 """
 	
-	if (_gata_awake == true and _fish_out == true):
+	if (_gata_awake == true and _fish_out == true) and _is_ending == false:
 		
 		_player_ending_03.play("animate")
 		_area_fish.visible = false
@@ -708,16 +626,10 @@ func _on_PlayerFish_animation_finished(anim_name):
 		_player_audrey.stop()
 		_disable_click = true
 		_ending_text = "¡Oh no!, has matado a Don Burbujas…"
+		_is_ending = true
 		
 func _on_PlayerEnding03_animation_finished(anim_name):
 	_dora_awake = true
-		
-	"""
-		if anim_name == "fish_bubbles":
-			_player_fish.play("fish_idle")
-			_fish_out = false
-			_fish_last_animation = _player_fish.current_animation
-	"""
 
 
 """
@@ -745,8 +657,7 @@ func _on_PlayerSpider_animation_started(anim_name):
 		
 		if _gata_awake == true and _curtain_moving == false:
 			
-			if _window_open == false:
-				# print("Gata va a la cortina!")
+			if _window_open == false and _is_ending == false:
 				
 				""" # ENDING 04 """
 				
@@ -755,9 +666,9 @@ func _on_PlayerSpider_animation_started(anim_name):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
 				
-			if _window_open == true:
-				# print("Gata va por la ventana!")
+			if _window_open == true and _is_ending == false:
 				
 				""" # ENDING 05 """
 				
@@ -766,6 +677,7 @@ func _on_PlayerSpider_animation_started(anim_name):
 				_player_audrey.stop()
 				_disable_click = true
 				_ending_text = "Pero que bestia eres, ¡Te has cargado a Audrey!"
+				_is_ending = true
 				
 
 func _on_PlayerEnding04_animation_finished(anim_name):
@@ -798,7 +710,6 @@ func _on_PlayerSpider_animation_finished(anim_name):
 		_spider_down = false
 
 
-
 """
 Hen
 """
@@ -808,8 +719,6 @@ var _hanger_fall = false
 
 func _on_AreaHen_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT and !_disable_click:
-		print("_hen_spin = ", _hen_spin)
-		print("_hanger_fall = ", _hanger_fall)
 		
 		
 		if (_window_open == false or _door_open == false):
@@ -821,7 +730,6 @@ func _on_AreaHen_input_event(viewport, event, shape_idx):
 				_player_hen.play("hen_spin")
 				_hen_last_animation = _player_hen.current_animation
 				_hen_spin = true
-				# print("Click 1")
 				
 			elif _hen_spin == true:
 				_hanger_fall = true
@@ -829,10 +737,6 @@ func _on_AreaHen_input_event(viewport, event, shape_idx):
 				_sprite_hanger.visible = false
 				_sprite_coat.visible = false
 				_sprite_hen.visible = false
-				
-				# print("_hen_spin = ", _hen_spin)
-				# print("_hanger_fall = ", _hanger_fall)
-				# print("Click 2")
 
 
 func _on_PlayerHen_animation_finished(anim_name):
@@ -845,21 +749,6 @@ func _on_PlayerHen_animation_finished(anim_name):
 		if _hanger_fall == false:
 			_player_hen.play("hen_spin")
 
-		"""
-		elif _hanger_fall == true:
-			_player_ending_01.play("animate")
-			_sprite_hanger.visible = false
-			_sprite_coat.visible = false
-			_sprite_hen.visible = false
-		"""	
-			
-	
-	"""	
-	if anim_name == "hen_spin":
-		_sprite_hanger.visible = false
-		_sprite_coat.visible = false
-		_player_ending_01.play("animate")
-	"""
 		
 """ # ENDING 01 """
 
@@ -952,24 +841,16 @@ func _on_PlayerWindow_animation_finished(anim_name):
 		_player_hen.play("hen_idle")
 		_hen_spin = false
 		_hanger_fall = false
-		
-		print("Door open? ", _door_open)
-		print("Window open? ", _window_open)
-
 
 
 """
 Bird
 """
-# var _bird_last_animation = "bird_empty"
 
 func _bird_falling(position):
 	_bird_falling_position = position
-	print("bird falling position ", _bird_falling_position)
 
 func _on_PlayerBird_animation_finished(anim_name):
-	
-	print("_bird_flying: ", _bird_flying)
 
 	if anim_name == "bird_appears" and _window_open == false:
 		
@@ -979,14 +860,12 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		if _cuckoo_stop == false:
 			_player_bird.play("bird_empty")
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 	if anim_name == "bird_appears" and _window_open == true:
 		
@@ -995,16 +874,14 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		if _cuckoo_stop == false:
 			_player_bird.play("bird_empty")
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
-	if anim_name == "bird_enters": # and _window_open == true:
+	if anim_name == "bird_enters":
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_enters_love")
@@ -1012,14 +889,37 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
+			
+			if _gata_awake == true and _is_ending == false:
+				
+				""" # ENDING 06 (repeated) """
+				
+				_player_ending_06.play("animate")
+				_cuckoo_stop = false
+				_area_audrey.visible = false
+				_player_audrey.stop()
+				_disable_click = true
+				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
+			
 			
 		if _cuckoo_stop == false:
 			_player_bird.play("bird_continues")
 			_bird_flying = true
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
+			
+			if _gata_awake == true and _is_ending == false:
+				
+				""" # ENDING 07 (repeated) """
+				
+				_player_ending_07.play("animate")
+				_area_audrey.visible = false
+				_player_audrey.stop()
+				_disable_click = true
+				_ending_text = "Esto es lo que les pasa a las gatitas traviesas…"
+				_is_ending = true
+			
 			
 			
 	if anim_name == "bird_enters_love":
@@ -1030,14 +930,12 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		if _cuckoo_stop == false:
 			_player_bird.play("bird_continues")
 			_bird_flying = true
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		
 	if anim_name == "bird_appears_love" and _window_open == false:
@@ -1048,14 +946,12 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		if _cuckoo_stop == false:
 			_player_bird.play("bird_appears")
 			_bird_flying = false
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 	if anim_name == "bird_appears_love" and _window_open == true:
 			
@@ -1063,22 +959,18 @@ func _on_PlayerBird_animation_finished(anim_name):
 		_bird_flying = false
 		_bird_clock = false
 		_bird_last_animation = _player_bird.current_animation
-		print("bird last anim: ", _bird_last_animation)
 		
 	if anim_name == "bird_continues" and _chain_last_animation != "chain_spin":
 		_player_bird.play("bird_passes")
 		_bird_flying = true
 		_bird_clock = false
 		_bird_last_animation = _player_bird.current_animation
-		print("bird last anim: ", _bird_last_animation)
-		# print("chain last anim: ", _chain_last_animation)
 		
 	if anim_name == "bird_continues" and _chain_last_animation == "chain_spin":
 		_player_bird.play("bird_stuck")
 		_bird_flying = false
 		_bird_clock = false
 		_bird_last_animation = _player_bird.current_animation
-		print("bird last anim: ", _bird_last_animation)
 		_player_chain.play("chain_bird")
 		_chain_last_animation = "chain_bird"
 		_bird_stuck = true
@@ -1090,13 +982,11 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = true
 			_bird_clock = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 		if _cuckoo_stop == false and _window_open == true:
 			_player_bird.play("bird_leaves")
 			_bird_flying = false
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 		
 		if _cuckoo_stop == true:
 			_player_bird.play("bird_enters_love")
@@ -1104,34 +994,34 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_bird_flying = false
 			_bird_clock = true
 			_bird_last_animation = _player_bird.current_animation
-			print("bird last anim: ", _bird_last_animation)
 			
 	if anim_name == "bird_leaves":
 		_player_bird.play("bird_empty")
 		_bird_flying = false
 		_bird_clock = false
 		_bird_last_animation = _player_bird.current_animation
-		print("bird last anim: ", _bird_last_animation)
 			
 	""" # ENDING 08a """
-	if anim_name == "bird_falls2":
+	if anim_name == "bird_falls2" and _is_ending == false:
 		_dora_awake = true
 		_player_audrey.play("gata_aware_left")
 		# _player_bird.play("bird_stuck")
 		_disable_click = true
 		_ending_text = "Pobrecita Audrey, si ella no hecho nada…"
+		_is_ending = true
 		
 	""" # ENDING 08b """
-	if anim_name == "bird_falls3":
+	if anim_name == "bird_falls3" and _is_ending == false:
 		_dora_awake = true
 		_player_screen.play("screen_burnt")
 		_player_audrey.play("gata_aware_right")
 		# _player_bird.play("bird_stuck")
 		_disable_click = true
 		_ending_text = "Pobrecita Audrey, si ella no hecho nada…"
+		_is_ending = true
 		
 	""" # ENDING 08c """
-	if anim_name == "bird_falls1":
+	if anim_name == "bird_falls1" and _is_ending == false:
 		
 		if _gata_awake == false:
 			_bird_on_coat = true
@@ -1141,19 +1031,8 @@ func _on_PlayerBird_animation_finished(anim_name):
 			_player_bird.play("bird_stuck")
 			_player_ending_08c.play("animate")
 			_disable_click = true
+			_is_ending = true
 		
-			
-	"""	
-	if anim_name == "bird_appears" and _window_open == true:
-		_player_bird.play("bird_enters")
-	if anim_name == "bird_enters" and _cuckoo_stop == true:
-		_player_bird.play("bird_enters_love")
-		
-	if anim_name == "bird_enters" and _cuckoo_stop == false:
-		_player_bird.play("bird_continues")
-	if anim_name == "bird_enters_love" and _cuckoo_stop == false:
-		_player_bird.play("bird_continues")
-	"""
 
 
 # WHEN GAME IS OVER LOAD NEXT SCENE:
@@ -1182,7 +1061,6 @@ func _on_ButtonBack_pressed():
 	$InstructionsSceneBkg.visible = false
 	_disable_click = false
 	_show_instructions = false
-	# Global.goto_scene("res://GameScene.tscn")
 
 func _on_ButtonRestart_pressed():
 	Global.goto_scene("res://InitialScene.tscn")

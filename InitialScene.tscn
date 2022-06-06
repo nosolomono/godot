@@ -98,7 +98,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "scratches"
-frame = 12
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true

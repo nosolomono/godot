@@ -114,7 +114,7 @@ texture = ExtResource( 34 )
 offset = Vector2( 282.47, 133.984 )
 
 [node name="ButtonRight2" type="Sprite" parent="Lose2SceneBkg"]
-position = Vector2( -62.4818, 347.941 )
+position = Vector2( -62.4818, 364 )
 scale = Vector2( 0.884615, 0.554502 )
 texture = ExtResource( 32 )
 offset = Vector2( 635.87, 134.461 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://fonts/lemon_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://ButtonNormal.tres" type="StyleBox" id=2]
@@ -34,7 +34,6 @@
 [ext_resource path="res://assets/button_right.png" type="Texture" id=32]
 [ext_resource path="res://assets/button_left.png" type="Texture" id=33]
 [ext_resource path="res://assets/button_middle.png" type="Texture" id=34]
-[ext_resource path="res://audio/scene_lose.wav" type="AudioStream" id=35]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 blend_mode = 3
@@ -64,7 +63,7 @@ tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 35 )
+"stream": ExtResource( 31 )
 } ],
 "times": PoolRealArray( 0.25 )
 }
@@ -140,10 +139,7 @@ custom_fonts/font = ExtResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 3 )
 custom_styles/normal = ExtResource( 2 )
-text = "Ver creditos"
-__meta__ = {
-"_edit_lock_": true
-}
+text = "Finalizar juego"
 
 [node name="OverlayDirt" type="Sprite" parent="."]
 material = SubResource( 4 )
@@ -159,7 +155,7 @@ position = Vector2( 960, 540 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "scratches"
-frame = 12
+frame = 4
 playing = true
 __meta__ = {
 "_edit_lock_": true
